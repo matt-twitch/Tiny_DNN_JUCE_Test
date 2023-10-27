@@ -5,6 +5,7 @@
               headerPath="/Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/tiny_dnn">
   <MAINGROUP id="JGCz24" name="Tiny_DNN_Test_2">
     <GROUP id="{36513717-B98F-F215-18BB-731E345A9340}" name="Source">
+      <FILE id="z5lVef" name="rapidcsv.h" compile="0" resource="0" file="Source/rapidcsv.h"/>
       <GROUP id="{4E179C91-C189-1E4B-2742-BFC82546055E}" name="tiny_dnn">
         <GROUP id="{3B5AD546-6447-D8DF-936B-73C46C4F9CD8}" name="activations">
           <FILE id="oyiiVX" name="activation_layer.h" compile="0" resource="0"

@@ -150,6 +150,7 @@
 		A5C11CFF5DB6A43B858D6DEE /* gradient_check.h */ /* gradient_check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gradient_check.h; path = ../../Source/tiny_dnn/util/gradient_check.h; sourceTree = SOURCE_ROOT; };
 		A64569A327445622826453DC /* tiny_quantized_fully_connected_kernel.h */ /* tiny_quantized_fully_connected_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantized_fully_connected_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantized_fully_connected_kernel.h; sourceTree = SOURCE_ROOT; };
 		A6D1633133A05A1A2331F277 /* xexpression.hpp */ /* xexpression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xexpression.hpp; path = ../../Source/tiny_dnn/xtensor/xexpression.hpp; sourceTree = SOURCE_ROOT; };
+		A72FBF7DF6ADBE73F17005C1 /* rapidcsv.h */ /* rapidcsv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rapidcsv.h; path = ../../Source/rapidcsv.h; sourceTree = SOURCE_ROOT; };
 		A8E4B9796ACEAD8AF75517E6 /* config.h */ /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../Source/tiny_dnn/config.h; sourceTree = SOURCE_ROOT; };
 		A94904E1F68E3FCD049B5BB1 /* xtensor_config.hpp */ /* xtensor_config.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xtensor_config.hpp; path = ../../Source/tiny_dnn/xtensor/xtensor_config.hpp; sourceTree = SOURCE_ROOT; };
 		ABC1E1D8C1FE92F4EC2852DA /* colored_print.h */ /* colored_print.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = colored_print.h; path = ../../Source/tiny_dnn/util/colored_print.h; sourceTree = SOURCE_ROOT; };
@@ -494,6 +495,7 @@
 		677FEEF308198AFB6AA14404 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A72FBF7DF6ADBE73F17005C1,
 				6604D828E588FFDF10CB3A99,
 				DF5F2DB168C24FAA3AEACD96,
 			);

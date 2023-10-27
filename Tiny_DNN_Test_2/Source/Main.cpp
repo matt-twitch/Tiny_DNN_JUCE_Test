@@ -8,17 +8,39 @@
 
 #include <JuceHeader.h>
 #include <tiny_dnn.h>
+#include "rapidcsv.h"
 
 //==============================================================================
-using namespace tiny_dnn;
-using namespace tiny_dnn::activation;
-using namespace tiny_dnn::layers;
 
 void construct_cnn() {
-    using namespace tiny_dnn;
 
-    network<sequential> net;
-
+/*
+    // ARCHITECTURE //
+ 
+    // CNN for feature recognition
+    Conv1 - Filter size 16
+    MaxPool1 - Pool size 2
+    Conv2 - Filter size 32
+    MaxPool2 - Pool Size 2
+    Flatten
+    
+*/
+    
+    tiny_dnn::network<tiny_dnn::sequential> net;
+    
+    const size_t numSamples = 100;
+    const size_t numFeatures = 4;
+    
+    // add layers
+    net << tiny_dnn::layers::conv(4, 1, 2, 1, 4) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::max_pool(4, 1, 0, 2) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::conv(4, 1, 2, 1, 4)  << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::max_pool(4, 1, 0, 2) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::fc(4, 1, 0) << tiny_dnn::activation::relu();
+    
+    tiny_dnn::adam opt;
+    
+/*
     // add layers
     net << conv(32, 32, 5, 1, 6) << tiny_dnn::activation::tanh()  // in:32x32x1, 5x5conv, 6fmaps
     << ave_pool(28, 28, 6, 2) << tiny_dnn::activation::tanh() // in:28x28x6, 2x2pooling
@@ -47,6 +69,7 @@ void construct_cnn() {
     // load
     // network<sequential> net2;
     // net2.load("net");
+ */
 }
 
 

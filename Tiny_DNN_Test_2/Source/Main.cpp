@@ -12,6 +12,8 @@
 
 //==============================================================================
 
+//std::vector<tiny_dnn::label_t> parse_Labels
+
 void construct_cnn() {
 
 /*
@@ -32,13 +34,17 @@ void construct_cnn() {
     const size_t numFeatures = 4;
     
     // add layers
-    net << tiny_dnn::layers::conv(4, 1, 2, 1, 4) << tiny_dnn::activation::relu();
-    net << tiny_dnn::layers::max_pool(4, 1, 0, 2) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::conv(numSamples, numFeatures, 2, 1, 4) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::max_pool(net.in_data_size(), 1, 0, 2);
     net << tiny_dnn::layers::conv(4, 1, 2, 1, 4)  << tiny_dnn::activation::relu();
-    net << tiny_dnn::layers::max_pool(4, 1, 0, 2) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::max_pool(net.in_data_size(), 1, 0, 2);
     net << tiny_dnn::layers::fc(4, 1, 0) << tiny_dnn::activation::relu();
     
     tiny_dnn::adam opt;
+    
+    // load training data
+    std::vector<tiny_dnn::label_t> t_labels;
+    std::vector<tiny_dnn::vec_t> t_data;
     
 /*
     // add layers
@@ -76,7 +82,7 @@ void construct_cnn() {
 int main (int argc, char* argv[])
 {
 
-    // ..your code goes here!
+    construct_cnn();
 
 
     return 0;

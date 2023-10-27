@@ -16,7 +16,7 @@
 
 void construct_rnn() {
     
-    tiny_dnn::network<tiny_dnn::sequential> rnn;
+    tiny_dnn::network<tiny_dnn::sequential> net;
     
     // training data (84 x 4)
     const size_t numSamples = 84;
@@ -25,6 +25,18 @@ void construct_rnn() {
     // load training data
     std::vector<tiny_dnn::label_t> t_labels;
     std::vector<tiny_dnn::vec_t> t_data;
+    
+    tiny_dnn::network<tiny_dnn::sequential> RegNet;
+
+    const size_t num_features = 4; // Number of input features
+    const size_t num_adsr_parameters = 4; // Number of ADSR parameters
+    const size_t num_classes = 2; // Number of classes (lead or pad)
+
+    RegNet << tiny_dnn::layers::fc(num_features, 64) << tiny_dnn::activation::relu()
+        << tiny_dnn::layers::fc(64, 64) << tiny_dnn::activation::relu()
+        << tiny_dnn::layers::fc(64, num_adsr_parameters)
+        << tiny_dnn::layers::linear(4)
+        << tiny_dnn::layers::softmax_layer();
     
 }
 

@@ -726,13 +726,13 @@
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/matttwitchen/Desktop/JUCE/modules",
 					"/Users/matttwitchen/Desktop/tiny-dnn-master",
-					"\"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"",
+					"/Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/tiny_dnn",
 					"$(inherited)",
 				);
 				INSTALL_PATH = "/usr/bin";
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/matttwitchen/Desktop/JUCE/modules /Users/matttwitchen/Desktop/tiny-dnn-master \"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/matttwitchen/Desktop/JUCE/modules /Users/matttwitchen/Desktop/tiny-dnn-master /Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/tiny_dnn";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Tiny_DNN_Test_2;
 				PRODUCT_NAME = "Tiny_DNN_Test_2";
 				USE_HEADERMAP = NO;
@@ -829,12 +829,12 @@
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/matttwitchen/Desktop/JUCE/modules",
 					"/Users/matttwitchen/Desktop/tiny-dnn-master",
-					"\"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"",
+					"/Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/tiny_dnn",
 					"$(inherited)",
 				);
 				INSTALL_PATH = "/usr/bin";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/matttwitchen/Desktop/JUCE/modules /Users/matttwitchen/Desktop/tiny-dnn-master \"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/matttwitchen/Desktop/JUCE/modules /Users/matttwitchen/Desktop/tiny-dnn-master /Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/tiny_dnn";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Tiny_DNN_Test_2;
 				PRODUCT_NAME = "Tiny_DNN_Test_2";
 				USE_HEADERMAP = NO;

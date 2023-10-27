@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="S6lQdA" name="Tiny_DNN_Test_2" projectType="consoleapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              headerPath="/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn">
+              headerPath="/Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/tiny_dnn">
   <MAINGROUP id="JGCz24" name="Tiny_DNN_Test_2">
     <GROUP id="{36513717-B98F-F215-18BB-731E345A9340}" name="Source">
       <GROUP id="{4E179C91-C189-1E4B-2742-BFC82546055E}" name="tiny_dnn">

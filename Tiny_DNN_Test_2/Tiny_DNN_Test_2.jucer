@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="S6lQdA" name="Tiny_DNN_Test_2" projectType="consoleapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              headerPath="/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn">
+  <MAINGROUP id="JGCz24" name="Tiny_DNN_Test_2">
+    <GROUP id="{36513717-B98F-F215-18BB-731E345A9340}" name="Source">
+      <GROUP id="{4E179C91-C189-1E4B-2742-BFC82546055E}" name="tiny_dnn">
+        <GROUP id="{3B5AD546-6447-D8DF-936B-73C46C4F9CD8}" name="activations">
+          <FILE id="oyiiVX" name="activation_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/activations/activation_layer.h"/>
+          <FILE id="ZQcfo3" name="asinh_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/asinh_layer.h"/>
+          <FILE id="nJds5s" name="elu_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/elu_layer.h"/>
+          <FILE id="gOicHR" name="leaky_relu_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/activations/leaky_relu_layer.h"/>
+          <FILE id="zRHMbu" name="relu_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/relu_layer.h"/>
+          <FILE id="OGawEI" name="selu_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/selu_layer.h"/>
+          <FILE id="W1JuSC" name="sigmoid_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/sigmoid_layer.h"/>
+          <FILE id="filFyr" name="softmax_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/softmax_layer.h"/>
+          <FILE id="ela7Xg" name="softplus_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/activations/softplus_layer.h"/>
+          <FILE id="zyXECc" name="softsign_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/activations/softsign_layer.h"/>
+          <FILE id="m51GKz" name="tanh_layer.h" compile="0" resource="0" file="Source/tiny_dnn/activations/tanh_layer.h"/>
+          <FILE id="mbsdJY" name="tanh_p1m2_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/activations/tanh_p1m2_layer.h"/>
+        </GROUP>
+        <GROUP id="{596CE8A6-FB64-4DF1-F306-C371EC7ED937}" name="core">
+          <GROUP id="{8437F959-B2E2-66ED-8AED-A2F994A56231}" name="framework">
+            <FILE id="FG7K5u" name="device.fwd.h" compile="0" resource="0" file="Source/tiny_dnn/core/framework/device.fwd.h"/>
+            <FILE id="SNe8RW" name="device.h" compile="0" resource="0" file="Source/tiny_dnn/core/framework/device.h"/>
+            <FILE id="X1kvDu" name="op_kernel.h" compile="0" resource="0" file="Source/tiny_dnn/core/framework/op_kernel.h"/>
+            <FILE id="rQHqlX" name="program.h" compile="0" resource="0" file="Source/tiny_dnn/core/framework/program.h"/>
+            <FILE id="iWYRLK" name="program_manager.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/framework/program_manager.h"/>
+            <FILE id="UjeXJq" name="tensor.h" compile="0" resource="0" file="Source/tiny_dnn/core/framework/tensor.h"/>
+            <FILE id="INiIFK" name="tensor_utils.h" compile="0" resource="0" file="Source/tiny_dnn/core/framework/tensor_utils.h"/>
+          </GROUP>
+          <GROUP id="{3471DA3C-99C4-F600-31D6-27A5EF086681}" name="kernels">
+            <FILE id="NTrxOu" name="avx_deconv2d_back_kernel.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/avx_deconv2d_back_kernel.h"/>
+            <FILE id="NxGwsi" name="avx_deconv2d_kernel.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/avx_deconv2d_kernel.h"/>
+            <FILE id="S0Bb8U" name="avx_kernel_common.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/avx_kernel_common.h"/>
+            <FILE id="lbw0BP" name="conv2d_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/conv2d_grad_op.h"/>
+            <FILE id="h0QOe2" name="conv2d_grad_op_avx.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/conv2d_grad_op_avx.h"/>
+            <FILE id="IGlxoI" name="conv2d_op.h" compile="0" resource="0" file="Source/tiny_dnn/core/kernels/conv2d_op.h"/>
+            <FILE id="VR1mWj" name="conv2d_op_avx.h" compile="0" resource="0" file="Source/tiny_dnn/core/kernels/conv2d_op_avx.h"/>
+            <FILE id="ryaJb5" name="conv2d_op_internal.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/conv2d_op_internal.h"/>
+            <FILE id="z5jUL5" name="conv2d_op_libdnn.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/conv2d_op_libdnn.h"/>
+            <FILE id="QYqJ07" name="conv2d_op_nnpack.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/conv2d_op_nnpack.h"/>
+            <FILE id="aWBC8t" name="conv2d_op_opencl.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/conv2d_op_opencl.h"/>
+            <FILE id="zARd49" name="fully_connected_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/fully_connected_grad_op.h"/>
+            <FILE id="oxs1EN" name="fully_connected_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/fully_connected_op.h"/>
+            <FILE id="re3GOZ" name="fully_connected_op_avx.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/fully_connected_op_avx.h"/>
+            <FILE id="pyud2M" name="fully_connected_op_cblas.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/fully_connected_op_cblas.h"/>
+            <FILE id="BOTKjR" name="fully_connected_op_intel_mkl.h" compile="0"
+                  resource="0" file="Source/tiny_dnn/core/kernels/fully_connected_op_intel_mkl.h"/>
+            <FILE id="w4TTcP" name="fully_connected_op_internal.h" compile="0"
+                  resource="0" file="Source/tiny_dnn/core/kernels/fully_connected_op_internal.h"/>
+            <FILE id="eKR392" name="fully_connected_op_nnpack.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/fully_connected_op_nnpack.h"/>
+            <FILE id="JJaS22" name="global_avepool_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/global_avepool_grad_op.h"/>
+            <FILE id="PPnNfH" name="global_avepool_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/global_avepool_op.h"/>
+            <FILE id="vgunKe" name="global_avepool_op_avx.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/global_avepool_op_avx.h"/>
+            <FILE id="s2RyZc" name="global_avepool_op_internal.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/global_avepool_op_internal.h"/>
+            <FILE id="h8q1bP" name="gru_cell_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/gru_cell_grad_op.h"/>
+            <FILE id="bdyVuG" name="gru_cell_op.h" compile="0" resource="0" file="Source/tiny_dnn/core/kernels/gru_cell_op.h"/>
+            <FILE id="EUbqRy" name="gru_cell_op_internal.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/gru_cell_op_internal.h"/>
+            <FILE id="zkVGiH" name="lstm_cell_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/lstm_cell_grad_op.h"/>
+            <FILE id="kC85pY" name="lstm_cell_op.h" compile="0" resource="0" file="Source/tiny_dnn/core/kernels/lstm_cell_op.h"/>
+            <FILE id="CkvLOg" name="lstm_cell_op_internal.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/lstm_cell_op_internal.h"/>
+            <FILE id="gdK0hh" name="maxpool_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/maxpool_grad_op.h"/>
+            <FILE id="DH2Fkv" name="maxpool_op.h" compile="0" resource="0" file="Source/tiny_dnn/core/kernels/maxpool_op.h"/>
+            <FILE id="b8v2EO" name="maxpool_op_avx.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/maxpool_op_avx.h"/>
+            <FILE id="xVUjbC" name="maxpool_op_internal.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/maxpool_op_internal.h"/>
+            <FILE id="UP3oaB" name="maxpool_op_nnpack.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/maxpool_op_nnpack.h"/>
+            <FILE id="cSVkje" name="nnp_deconv2d_kernel.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/nnp_deconv2d_kernel.h"/>
+            <FILE id="l6E4hO" name="rnn_cell_grad_op.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/rnn_cell_grad_op.h"/>
+            <FILE id="t6tGbB" name="rnn_cell_op.h" compile="0" resource="0" file="Source/tiny_dnn/core/kernels/rnn_cell_op.h"/>
+            <FILE id="pn0Azb" name="rnn_cell_op_internal.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/rnn_cell_op_internal.h"/>
+            <FILE id="Kpkxs4" name="tiny_deconv2d_back_kernel.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/tiny_deconv2d_back_kernel.h"/>
+            <FILE id="uBNwXt" name="tiny_deconv2d_kernel.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/tiny_deconv2d_kernel.h"/>
+            <FILE id="YP0tLZ" name="tiny_quantization_kernel.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/kernels/tiny_quantization_kernel.h"/>
+            <FILE id="YxNtIa" name="tiny_quantized_conv2d_kernel.h" compile="0"
+                  resource="0" file="Source/tiny_dnn/core/kernels/tiny_quantized_conv2d_kernel.h"/>
+            <FILE id="MIvN3C" name="tiny_quantized_deconv2d_kernel.h" compile="0"
+                  resource="0" file="Source/tiny_dnn/core/kernels/tiny_quantized_deconv2d_kernel.h"/>
+            <FILE id="korl5C" name="tiny_quantized_fully_connected_kernel.h" compile="0"
+                  resource="0" file="Source/tiny_dnn/core/kernels/tiny_quantized_fully_connected_kernel.h"/>
+            <FILE id="UEeJwc" name="tiny_quantized_matmul_kernel.h" compile="0"
+                  resource="0" file="Source/tiny_dnn/core/kernels/tiny_quantized_matmul_kernel.h"/>
+          </GROUP>
+          <GROUP id="{E4CDAFC3-365D-8E9C-44F2-0010CF8E0E48}" name="params">
+            <FILE id="PuqmrG" name="conv_params.h" compile="0" resource="0" file="Source/tiny_dnn/core/params/conv_params.h"/>
+            <FILE id="wgnmxO" name="deconv_params.h" compile="0" resource="0" file="Source/tiny_dnn/core/params/deconv_params.h"/>
+            <FILE id="dLffHP" name="fully_params.h" compile="0" resource="0" file="Source/tiny_dnn/core/params/fully_params.h"/>
+            <FILE id="xGcIkv" name="global_avepool_params.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/params/global_avepool_params.h"/>
+            <FILE id="LQvcD3" name="gru_cell_params.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/params/gru_cell_params.h"/>
+            <FILE id="GElsgB" name="lstm_cell_params.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/params/lstm_cell_params.h"/>
+            <FILE id="GFZNJ6" name="maxpool_params.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/params/maxpool_params.h"/>
+            <FILE id="i2uZdM" name="params.h" compile="0" resource="0" file="Source/tiny_dnn/core/params/params.h"/>
+            <FILE id="itND5j" name="rnn_cell_params.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/core/params/rnn_cell_params.h"/>
+          </GROUP>
+          <FILE id="Ejwx3Q" name="backend.h" compile="0" resource="0" file="Source/tiny_dnn/core/backend.h"/>
+          <FILE id="uDilHY" name="backend_avx.h" compile="0" resource="0" file="Source/tiny_dnn/core/backend_avx.h"/>
+          <FILE id="XCj5Up" name="backend_tiny.h" compile="0" resource="0" file="Source/tiny_dnn/core/backend_tiny.h"/>
+          <FILE id="mniPPt" name="session.h" compile="0" resource="0" file="Source/tiny_dnn/core/session.h"/>
+        </GROUP>
+        <GROUP id="{CEFCCE82-68DC-BCC8-1688-F388983D2710}" name="io">
+          <GROUP id="{0442D7A1-B3DA-192D-5D54-9F7250426655}" name="caffe">
+            <FILE id="MTzp7o" name="caffe.proto" compile="0" resource="1" file="Source/tiny_dnn/io/caffe/caffe.proto"/>
+            <FILE id="pyJ1Hj" name="CPPLINT.cfg" compile="0" resource="1" file="Source/tiny_dnn/io/caffe/CPPLINT.cfg"/>
+            <FILE id="PFNqBB" name="layer_factory.h" compile="0" resource="0" file="Source/tiny_dnn/io/caffe/layer_factory.h"/>
+            <FILE id="cTwCPO" name="layer_factory_impl.h" compile="0" resource="0"
+                  file="Source/tiny_dnn/io/caffe/layer_factory_impl.h"/>
+          </GROUP>
+          <FILE id="v5CA8Z" name="cifar10_parser.h" compile="0" resource="0"
+                file="Source/tiny_dnn/io/cifar10_parser.h"/>
+          <FILE id="T5jzOb" name="display.h" compile="0" resource="0" file="Source/tiny_dnn/io/display.h"/>
+          <FILE id="Z06YW7" name="layer_factory.h" compile="0" resource="0" file="Source/tiny_dnn/io/layer_factory.h"/>
+          <FILE id="NXrFiZ" name="mnist_parser.h" compile="0" resource="0" file="Source/tiny_dnn/io/mnist_parser.h"/>
+        </GROUP>
+        <GROUP id="{6FCD996B-F8A1-B072-632D-14193D7A06A6}" name="layers">
+          <FILE id="MduRLK" name="arithmetic_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/arithmetic_layer.h"/>
+          <FILE id="cVYHYb" name="average_pooling_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/average_pooling_layer.h"/>
+          <FILE id="OZyCGM" name="average_unpooling_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/average_unpooling_layer.h"/>
+          <FILE id="SzvmHe" name="batch_normalization_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/batch_normalization_layer.h"/>
+          <FILE id="OsMFZt" name="cell.h" compile="0" resource="0" file="Source/tiny_dnn/layers/cell.h"/>
+          <FILE id="GFo0XJ" name="cells.h" compile="0" resource="0" file="Source/tiny_dnn/layers/cells.h"/>
+          <FILE id="L9UdpU" name="concat_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/concat_layer.h"/>
+          <FILE id="VlyD5X" name="convolutional_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/convolutional_layer.h"/>
+          <FILE id="HXFSiB" name="deconvolutional_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/deconvolutional_layer.h"/>
+          <FILE id="UFbpWv" name="dropout_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/dropout_layer.h"/>
+          <FILE id="xrkLHN" name="fully_connected_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/fully_connected_layer.h"/>
+          <FILE id="JeX2aY" name="global_average_pooling_layer.h" compile="0"
+                resource="0" file="Source/tiny_dnn/layers/global_average_pooling_layer.h"/>
+          <FILE id="duhH1N" name="gru_cell.h" compile="0" resource="0" file="Source/tiny_dnn/layers/gru_cell.h"/>
+          <FILE id="K4H9VA" name="input_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/input_layer.h"/>
+          <FILE id="F4ViJF" name="l2_normalization_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/l2_normalization_layer.h"/>
+          <FILE id="gcjgW6" name="layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/layer.h"/>
+          <FILE id="bnpvNe" name="layers.h" compile="0" resource="0" file="Source/tiny_dnn/layers/layers.h"/>
+          <FILE id="DfFh5U" name="linear_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/linear_layer.h"/>
+          <FILE id="ikam9I" name="lrn_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/lrn_layer.h"/>
+          <FILE id="mW4mrD" name="lstm_cell.h" compile="0" resource="0" file="Source/tiny_dnn/layers/lstm_cell.h"/>
+          <FILE id="mhCfMb" name="max_pooling_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/max_pooling_layer.h"/>
+          <FILE id="WNSbvD" name="max_unpooling_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/max_unpooling_layer.h"/>
+          <FILE id="ygu5qm" name="partial_connected_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/partial_connected_layer.h"/>
+          <FILE id="jysFPz" name="power_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/power_layer.h"/>
+          <FILE id="EiYxlL" name="quantized_convolutional_layer.h" compile="0"
+                resource="0" file="Source/tiny_dnn/layers/quantized_convolutional_layer.h"/>
+          <FILE id="GOkjUg" name="quantized_deconvolutional_layer.h" compile="0"
+                resource="0" file="Source/tiny_dnn/layers/quantized_deconvolutional_layer.h"/>
+          <FILE id="MG0h2a" name="quantized_fully_connected_layer.h" compile="0"
+                resource="0" file="Source/tiny_dnn/layers/quantized_fully_connected_layer.h"/>
+          <FILE id="z8NxWr" name="recurrent_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/recurrent_layer.h"/>
+          <FILE id="Ojtp5c" name="rnn_cell.h" compile="0" resource="0" file="Source/tiny_dnn/layers/rnn_cell.h"/>
+          <FILE id="ZL9lv0" name="slice_layer.h" compile="0" resource="0" file="Source/tiny_dnn/layers/slice_layer.h"/>
+          <FILE id="LKH72J" name="zero_pad_layer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/layers/zero_pad_layer.h"/>
+        </GROUP>
+        <GROUP id="{F120CD4C-90D2-ABB6-70FA-F39A5CC19D3C}" name="lossfunctions">
+          <FILE id="V47ezV" name="loss_function.h" compile="0" resource="0" file="Source/tiny_dnn/lossfunctions/loss_function.h"/>
+        </GROUP>
+        <GROUP id="{BC351A21-0AC9-C94B-0DA9-BABD28F47781}" name="models">
+          <FILE id="VEw8aS" name="alexnet.h" compile="0" resource="0" file="Source/tiny_dnn/models/alexnet.h"/>
+        </GROUP>
+        <GROUP id="{091DF422-E7EC-30BC-1359-401EAD3647C5}" name="optimizers">
+          <FILE id="TqPMqF" name="optimizer.h" compile="0" resource="0" file="Source/tiny_dnn/optimizers/optimizer.h"/>
+        </GROUP>
+        <GROUP id="{36D321BA-8A4A-143E-AEE0-0A4F6A0736D7}" name="util">
+          <FILE id="rei9bd" name="aligned_allocator.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/aligned_allocator.h"/>
+          <FILE id="SHoNNF" name="colored_print.h" compile="0" resource="0" file="Source/tiny_dnn/util/colored_print.h"/>
+          <FILE id="b8fLmi" name="deform.h" compile="0" resource="0" file="Source/tiny_dnn/util/deform.h"/>
+          <FILE id="ErrMSZ" name="deserialization_helper.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/deserialization_helper.h"/>
+          <FILE id="RpDdLB" name="gradient_check.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/gradient_check.h"/>
+          <FILE id="ypYOh7" name="graph_visualizer.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/graph_visualizer.h"/>
+          <FILE id="EXs9jd" name="image.h" compile="0" resource="0" file="Source/tiny_dnn/util/image.h"/>
+          <FILE id="OyF8SJ" name="macro.h" compile="0" resource="0" file="Source/tiny_dnn/util/macro.h"/>
+          <FILE id="sDcRb4" name="math_functions.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/math_functions.h"/>
+          <FILE id="EzXzZn" name="nms.h" compile="0" resource="0" file="Source/tiny_dnn/util/nms.h"/>
+          <FILE id="k4jlRV" name="nn_error.h" compile="0" resource="0" file="Source/tiny_dnn/util/nn_error.h"/>
+          <FILE id="h9GDX0" name="parallel_for.h" compile="0" resource="0" file="Source/tiny_dnn/util/parallel_for.h"/>
+          <FILE id="IqYwBS" name="product.h" compile="0" resource="0" file="Source/tiny_dnn/util/product.h"/>
+          <FILE id="wvDljd" name="random.h" compile="0" resource="0" file="Source/tiny_dnn/util/random.h"/>
+          <FILE id="UKKA6A" name="serialization_functions.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/serialization_functions.h"/>
+          <FILE id="r3Fg6f" name="serialization_helper.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/serialization_helper.h"/>
+          <FILE id="zuz4na" name="serialization_layer_list.h" compile="0" resource="0"
+                file="Source/tiny_dnn/util/serialization_layer_list.h"/>
+          <FILE id="u4bln7" name="target_cost.h" compile="0" resource="0" file="Source/tiny_dnn/util/target_cost.h"/>
+          <FILE id="BFIAwV" name="util.h" compile="0" resource="0" file="Source/tiny_dnn/util/util.h"/>
+          <FILE id="GTBUxm" name="weight_init.h" compile="0" resource="0" file="Source/tiny_dnn/util/weight_init.h"/>
+        </GROUP>
+        <GROUP id="{5C68A0C8-D377-4C6D-75EB-86E75FECD894}" name="xtensor">
+          <FILE id="CUCGrk" name="xadapt.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xadapt.hpp"/>
+          <FILE id="Jrs6A0" name="xarray.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xarray.hpp"/>
+          <FILE id="VfzwVS" name="xassign.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xassign.hpp"/>
+          <FILE id="TCJOlI" name="xaxis_iterator.hpp" compile="0" resource="0"
+                file="Source/tiny_dnn/xtensor/xaxis_iterator.hpp"/>
+          <FILE id="nEODgS" name="xbroadcast.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xbroadcast.hpp"/>
+          <FILE id="IQ9EN9" name="xbuffer_adaptor.hpp" compile="0" resource="0"
+                file="Source/tiny_dnn/xtensor/xbuffer_adaptor.hpp"/>
+          <FILE id="MCvbGK" name="xbuilder.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xbuilder.hpp"/>
+          <FILE id="meNo23" name="xcomplex.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xcomplex.hpp"/>
+          <FILE id="EIyhah" name="xcontainer.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xcontainer.hpp"/>
+          <FILE id="ENrSId" name="xcsv.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xcsv.hpp"/>
+          <FILE id="onk4Zh" name="xeval.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xeval.hpp"/>
+          <FILE id="QfZ5bf" name="xexception.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xexception.hpp"/>
+          <FILE id="wZeHjx" name="xexpression.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xexpression.hpp"/>
+          <FILE id="X3eSAT" name="xfunction.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xfunction.hpp"/>
+          <FILE id="y97IDg" name="xfunctorview.hpp" compile="0" resource="0"
+                file="Source/tiny_dnn/xtensor/xfunctorview.hpp"/>
+          <FILE id="ofj3jb" name="xgenerator.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xgenerator.hpp"/>
+          <FILE id="cgbaoZ" name="xindexview.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xindexview.hpp"/>
+          <FILE id="Zu48PX" name="xinfo.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xinfo.hpp"/>
+          <FILE id="i3Kuwt" name="xio.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xio.hpp"/>
+          <FILE id="D1PvEm" name="xiterable.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xiterable.hpp"/>
+          <FILE id="op8PzR" name="xiterator.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xiterator.hpp"/>
+          <FILE id="Pk6vDq" name="xlayout.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xlayout.hpp"/>
+          <FILE id="YIr7T3" name="xmath.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xmath.hpp"/>
+          <FILE id="ivmCPD" name="xmissing.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xmissing.hpp"/>
+          <FILE id="Hc9yqv" name="xnoalias.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xnoalias.hpp"/>
+          <FILE id="tMH8Tz" name="xoffsetview.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xoffsetview.hpp"/>
+          <FILE id="RNUZS2" name="xoperation.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xoperation.hpp"/>
+          <FILE id="xP3Fmt" name="xoptional.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xoptional.hpp"/>
+          <FILE id="fvCQdj" name="xrandom.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xrandom.hpp"/>
+          <FILE id="kIa93G" name="xreducer.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xreducer.hpp"/>
+          <FILE id="NVHo1U" name="xscalar.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xscalar.hpp"/>
+          <FILE id="xYDDHI" name="xsemantic.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xsemantic.hpp"/>
+          <FILE id="dtFCKJ" name="xslice.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xslice.hpp"/>
+          <FILE id="s0lEp1" name="xstorage.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xstorage.hpp"/>
+          <FILE id="fj7XtH" name="xstridedview.hpp" compile="0" resource="0"
+                file="Source/tiny_dnn/xtensor/xstridedview.hpp"/>
+          <FILE id="ZtHOaJ" name="xstrides.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xstrides.hpp"/>
+          <FILE id="UVkrSo" name="xtensor.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xtensor.hpp"/>
+          <FILE id="tyyaT9" name="xtensor_config.hpp" compile="0" resource="0"
+                file="Source/tiny_dnn/xtensor/xtensor_config.hpp"/>
+          <FILE id="EW8Abv" name="xtensor_forward.hpp" compile="0" resource="0"
+                file="Source/tiny_dnn/xtensor/xtensor_forward.hpp"/>
+          <FILE id="QXYV5m" name="xutils.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xutils.hpp"/>
+          <FILE id="XKUT5Y" name="xvectorize.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xvectorize.hpp"/>
+          <FILE id="hcY9DU" name="xview.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xview.hpp"/>
+          <FILE id="fqnzad" name="xview_utils.hpp" compile="0" resource="0" file="Source/tiny_dnn/xtensor/xview_utils.hpp"/>
+        </GROUP>
+        <FILE id="rlqx3k" name="config.h" compile="0" resource="0" file="Source/tiny_dnn/config.h"/>
+        <FILE id="ryU0JR" name="network.h" compile="0" resource="0" file="Source/tiny_dnn/network.h"/>
+        <FILE id="j6keyd" name="node.h" compile="0" resource="0" file="Source/tiny_dnn/node.h"/>
+        <FILE id="E9DJu2" name="nodes.h" compile="0" resource="0" file="Source/tiny_dnn/nodes.h"/>
+        <FILE id="oDV9Y4" name="tiny_dnn.h" compile="0" resource="0" file="Source/tiny_dnn/tiny_dnn.h"/>
+      </GROUP>
+      <FILE id="zhU9Ww" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Tiny_DNN_Test_2" headerPath="/Users/matttwitchen/Desktop/tiny-dnn-master"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="Tiny_DNN_Test_2" headerPath="/Users/matttwitchen/Desktop/tiny-dnn-master"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>

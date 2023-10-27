@@ -1,0 +1,916 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00D4FEECAE602A1B1282B86E /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = 5D632E7B8FE792ED49D5FBCA; };
+		0650D0453F2052D30DBA7F0D /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = EAA697D187694EE085B3B3A9; };
+		0868A6732621E6B8B4718D55 /* ConsoleApp */ = {isa = PBXBuildFile; fileRef = 34A8700B652997439698A762; };
+		1C024208EB94432B77995FCF /* Main.cpp */ = {isa = PBXBuildFile; fileRef = DF5F2DB168C24FAA3AEACD96; };
+		1EFA1B7C4C059830F186B365 /* BinaryData.cpp */ = {isa = PBXBuildFile; fileRef = 9140287E7FB3ACF56144A66B; };
+		363601FB4800DB3AA2EF8472 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = AD1B16A5459DC9B8453B63DC; };
+		87916DFFAA8F6DB4DF0E999E /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = 661DE49CA77968111E2F446F; };
+		918817EB4DB088DC115A2CCE /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = 54F609D0EBE70928411A939D; };
+		92E83509A4397CE0BDAB749C /* IOKit.framework */ = {isa = PBXBuildFile; fileRef = D2754E137BF9B10B5AF4821E; };
+		EF343930D9DDC53B71C7844E /* Cocoa.framework */ = {isa = PBXBuildFile; fileRef = 76C78B1883540675364FC165; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		020A71D255066F68152611B4 /* tiny_quantization_kernel.h */ /* tiny_quantization_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantization_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantization_kernel.h; sourceTree = SOURCE_ROOT; };
+		03080C6B3FE45C7FB6B648A4 /* l2_normalization_layer.h */ /* l2_normalization_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = l2_normalization_layer.h; path = ../../Source/tiny_dnn/layers/l2_normalization_layer.h; sourceTree = SOURCE_ROOT; };
+		05BAA25E85430C9232ACC74D /* alexnet.h */ /* alexnet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = alexnet.h; path = ../../Source/tiny_dnn/models/alexnet.h; sourceTree = SOURCE_ROOT; };
+		08BD0A62F9B751D75BB12FAB /* xstrides.hpp */ /* xstrides.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xstrides.hpp; path = ../../Source/tiny_dnn/xtensor/xstrides.hpp; sourceTree = SOURCE_ROOT; };
+		0C1E03F7AAF12BABD003CC94 /* xio.hpp */ /* xio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xio.hpp; path = ../../Source/tiny_dnn/xtensor/xio.hpp; sourceTree = SOURCE_ROOT; };
+		0F6D147C2BAE4AA79AF470D8 /* tiny_quantized_matmul_kernel.h */ /* tiny_quantized_matmul_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantized_matmul_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantized_matmul_kernel.h; sourceTree = SOURCE_ROOT; };
+		0FBC29FAA4479C75D7B56EB4 /* quantized_deconvolutional_layer.h */ /* quantized_deconvolutional_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = quantized_deconvolutional_layer.h; path = ../../Source/tiny_dnn/layers/quantized_deconvolutional_layer.h; sourceTree = SOURCE_ROOT; };
+		122DB3F375B4CF2A331B3588 /* xscalar.hpp */ /* xscalar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xscalar.hpp; path = ../../Source/tiny_dnn/xtensor/xscalar.hpp; sourceTree = SOURCE_ROOT; };
+		1338B118824CCC14F5694911 /* device.h */ /* device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = device.h; path = ../../Source/tiny_dnn/core/framework/device.h; sourceTree = SOURCE_ROOT; };
+		146FF673635079004F06C53D /* rnn_cell_op.h */ /* rnn_cell_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rnn_cell_op.h; path = ../../Source/tiny_dnn/core/kernels/rnn_cell_op.h; sourceTree = SOURCE_ROOT; };
+		14C3D22B8F24BF475A8A4F96 /* fully_connected_grad_op.h */ /* fully_connected_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_grad_op.h; sourceTree = SOURCE_ROOT; };
+		1582A4AA2A989ABEBF768D2A /* parallel_for.h */ /* parallel_for.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = parallel_for.h; path = ../../Source/tiny_dnn/util/parallel_for.h; sourceTree = SOURCE_ROOT; };
+		181718CBE4B13768899CFAAA /* nodes.h */ /* nodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = nodes.h; path = ../../Source/tiny_dnn/nodes.h; sourceTree = SOURCE_ROOT; };
+		18FC16CDE6481ECC9555D1A8 /* CPPLINT.cfg */ /* CPPLINT.cfg */ = {isa = PBXFileReference; lastKnownFileType = file.cfg; name = CPPLINT.cfg; path = ../../Source/tiny_dnn/io/caffe/CPPLINT.cfg; sourceTree = SOURCE_ROOT; };
+		1A72F07F00F428722207A45E /* tiny_quantized_conv2d_kernel.h */ /* tiny_quantized_conv2d_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantized_conv2d_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantized_conv2d_kernel.h; sourceTree = SOURCE_ROOT; };
+		1B69E1E5A40E5D52E7FEC845 /* xmissing.hpp */ /* xmissing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xmissing.hpp; path = ../../Source/tiny_dnn/xtensor/xmissing.hpp; sourceTree = SOURCE_ROOT; };
+		1BCC6138FB6C88C74B25DA96 /* fully_connected_op_intel_mkl.h */ /* fully_connected_op_intel_mkl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op_intel_mkl.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op_intel_mkl.h; sourceTree = SOURCE_ROOT; };
+		1CD4579FCCE18AFBE6516B6F /* power_layer.h */ /* power_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = power_layer.h; path = ../../Source/tiny_dnn/layers/power_layer.h; sourceTree = SOURCE_ROOT; };
+		1DE4B589F990595199393ACE /* rnn_cell_op_internal.h */ /* rnn_cell_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rnn_cell_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/rnn_cell_op_internal.h; sourceTree = SOURCE_ROOT; };
+		1E3A7ABFE36628F8A30AC589 /* conv2d_op_libdnn.h */ /* conv2d_op_libdnn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_op_libdnn.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_op_libdnn.h; sourceTree = SOURCE_ROOT; };
+		20625FFE7475941997D88467 /* weight_init.h */ /* weight_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = weight_init.h; path = ../../Source/tiny_dnn/util/weight_init.h; sourceTree = SOURCE_ROOT; };
+		219A9F57831BAF9D1234A91A /* global_avepool_grad_op.h */ /* global_avepool_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_avepool_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/global_avepool_grad_op.h; sourceTree = SOURCE_ROOT; };
+		22F0117012CD701F5C211896 /* fully_connected_op_avx.h */ /* fully_connected_op_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op_avx.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op_avx.h; sourceTree = SOURCE_ROOT; };
+		237FAB4431C037A954330906 /* backend.h */ /* backend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = backend.h; path = ../../Source/tiny_dnn/core/backend.h; sourceTree = SOURCE_ROOT; };
+		279CF67D0B76913837B95EB5 /* softsign_layer.h */ /* softsign_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = softsign_layer.h; path = ../../Source/tiny_dnn/activations/softsign_layer.h; sourceTree = SOURCE_ROOT; };
+		27A66E481B7E50E63E0290F4 /* conv2d_op_internal.h */ /* conv2d_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_op_internal.h; sourceTree = SOURCE_ROOT; };
+		2A291D55F79A9AB06610F67E /* xnoalias.hpp */ /* xnoalias.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xnoalias.hpp; path = ../../Source/tiny_dnn/xtensor/xnoalias.hpp; sourceTree = SOURCE_ROOT; };
+		2AB99B6C9EF01104A17219E5 /* xgenerator.hpp */ /* xgenerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xgenerator.hpp; path = ../../Source/tiny_dnn/xtensor/xgenerator.hpp; sourceTree = SOURCE_ROOT; };
+		2B02769CA67B6C551FD43B7A /* maxpool_grad_op.h */ /* maxpool_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = maxpool_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/maxpool_grad_op.h; sourceTree = SOURCE_ROOT; };
+		2E6A16EDCD46A3BD84678F7F /* fully_connected_op_cblas.h */ /* fully_connected_op_cblas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op_cblas.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op_cblas.h; sourceTree = SOURCE_ROOT; };
+		2F707BCA50E9C9583296210F /* xoptional.hpp */ /* xoptional.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xoptional.hpp; path = ../../Source/tiny_dnn/xtensor/xoptional.hpp; sourceTree = SOURCE_ROOT; };
+		3156222B4F39030563385ABB /* tiny_deconv2d_kernel.h */ /* tiny_deconv2d_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_deconv2d_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_deconv2d_kernel.h; sourceTree = SOURCE_ROOT; };
+		33159337B7633BA8715F317A /* xstorage.hpp */ /* xstorage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xstorage.hpp; path = ../../Source/tiny_dnn/xtensor/xstorage.hpp; sourceTree = SOURCE_ROOT; };
+		33CFCBFC33AA1928227D787C /* conv2d_op_opencl.h */ /* conv2d_op_opencl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_op_opencl.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_op_opencl.h; sourceTree = SOURCE_ROOT; };
+		34A8700B652997439698A762 /* ConsoleApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tiny_DNN_Test_2; sourceTree = BUILT_PRODUCTS_DIR; };
+		34CEF548ADA53BD406CE141F /* lstm_cell_params.h */ /* lstm_cell_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstm_cell_params.h; path = ../../Source/tiny_dnn/core/params/lstm_cell_params.h; sourceTree = SOURCE_ROOT; };
+		3677C1442005F99AE6370C0D /* xeval.hpp */ /* xeval.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xeval.hpp; path = ../../Source/tiny_dnn/xtensor/xeval.hpp; sourceTree = SOURCE_ROOT; };
+		389615C3C42063426415FAE9 /* lstm_cell_op_internal.h */ /* lstm_cell_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstm_cell_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/lstm_cell_op_internal.h; sourceTree = SOURCE_ROOT; };
+		3A803B8E756F27021288833F /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = /Users/matttwitchen/Desktop/JUCE/modules/juce_data_structures; sourceTree = "<absolute>"; };
+		3A8C0B25C9DBAAD3C1190F4E /* max_unpooling_layer.h */ /* max_unpooling_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = max_unpooling_layer.h; path = ../../Source/tiny_dnn/layers/max_unpooling_layer.h; sourceTree = SOURCE_ROOT; };
+		3ED2C9860509FFEF6B6206CA /* xutils.hpp */ /* xutils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xutils.hpp; path = ../../Source/tiny_dnn/xtensor/xutils.hpp; sourceTree = SOURCE_ROOT; };
+		3FD038662E5A9425688048E9 /* xlayout.hpp */ /* xlayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xlayout.hpp; path = ../../Source/tiny_dnn/xtensor/xlayout.hpp; sourceTree = SOURCE_ROOT; };
+		42ABF70313384DBCC8E5A82A /* fully_params.h */ /* fully_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_params.h; path = ../../Source/tiny_dnn/core/params/fully_params.h; sourceTree = SOURCE_ROOT; };
+		43120869FBB72154AFA12C08 /* asinh_layer.h */ /* asinh_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = asinh_layer.h; path = ../../Source/tiny_dnn/activations/asinh_layer.h; sourceTree = SOURCE_ROOT; };
+		4451194066B7515076EB66B3 /* xbroadcast.hpp */ /* xbroadcast.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xbroadcast.hpp; path = ../../Source/tiny_dnn/xtensor/xbroadcast.hpp; sourceTree = SOURCE_ROOT; };
+		44F6B715B4868E3B40AF1180 /* xcomplex.hpp */ /* xcomplex.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xcomplex.hpp; path = ../../Source/tiny_dnn/xtensor/xcomplex.hpp; sourceTree = SOURCE_ROOT; };
+		46E19EDBD8691189F3AC2D2C /* conv2d_grad_op.h */ /* conv2d_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_grad_op.h; sourceTree = SOURCE_ROOT; };
+		4787438CD2A9F61EA1FCF31E /* target_cost.h */ /* target_cost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = target_cost.h; path = ../../Source/tiny_dnn/util/target_cost.h; sourceTree = SOURCE_ROOT; };
+		48BCD726A800BEA6633F15A2 /* xoffsetview.hpp */ /* xoffsetview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xoffsetview.hpp; path = ../../Source/tiny_dnn/xtensor/xoffsetview.hpp; sourceTree = SOURCE_ROOT; };
+		499C998110B11690A82144E5 /* math_functions.h */ /* math_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = math_functions.h; path = ../../Source/tiny_dnn/util/math_functions.h; sourceTree = SOURCE_ROOT; };
+		49B1AD2AC8C9A0FB25FD68FD /* fully_connected_layer.h */ /* fully_connected_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_layer.h; path = ../../Source/tiny_dnn/layers/fully_connected_layer.h; sourceTree = SOURCE_ROOT; };
+		4A47BB1287106DB142A04958 /* product.h */ /* product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = product.h; path = ../../Source/tiny_dnn/util/product.h; sourceTree = SOURCE_ROOT; };
+		4AF7AF0326A889D60BB20E6F /* display.h */ /* display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = display.h; path = ../../Source/tiny_dnn/io/display.h; sourceTree = SOURCE_ROOT; };
+		4B2360D15213FF9FCC75B6E8 /* conv2d_op_nnpack.h */ /* conv2d_op_nnpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_op_nnpack.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_op_nnpack.h; sourceTree = SOURCE_ROOT; };
+		4B2AC236233A19840F012446 /* serialization_layer_list.h */ /* serialization_layer_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = serialization_layer_list.h; path = ../../Source/tiny_dnn/util/serialization_layer_list.h; sourceTree = SOURCE_ROOT; };
+		4BB7F265ECF6FE63B29BC23F /* leaky_relu_layer.h */ /* leaky_relu_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = leaky_relu_layer.h; path = ../../Source/tiny_dnn/activations/leaky_relu_layer.h; sourceTree = SOURCE_ROOT; };
+		518B7970FA9360032C1183C1 /* xvectorize.hpp */ /* xvectorize.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xvectorize.hpp; path = ../../Source/tiny_dnn/xtensor/xvectorize.hpp; sourceTree = SOURCE_ROOT; };
+		532C3BFF3F4C7F1939AF42E4 /* average_unpooling_layer.h */ /* average_unpooling_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = average_unpooling_layer.h; path = ../../Source/tiny_dnn/layers/average_unpooling_layer.h; sourceTree = SOURCE_ROOT; };
+		5453301ED3A1BE8741D17D59 /* loss_function.h */ /* loss_function.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = loss_function.h; path = ../../Source/tiny_dnn/lossfunctions/loss_function.h; sourceTree = SOURCE_ROOT; };
+		54F609D0EBE70928411A939D /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
+		561F61126645259FEB878791 /* serialization_helper.h */ /* serialization_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = serialization_helper.h; path = ../../Source/tiny_dnn/util/serialization_helper.h; sourceTree = SOURCE_ROOT; };
+		562E057257D25BBBE3BF19D0 /* softplus_layer.h */ /* softplus_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = softplus_layer.h; path = ../../Source/tiny_dnn/activations/softplus_layer.h; sourceTree = SOURCE_ROOT; };
+		59DC549DF8B2759282F33E22 /* tanh_p1m2_layer.h */ /* tanh_p1m2_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tanh_p1m2_layer.h; path = ../../Source/tiny_dnn/activations/tanh_p1m2_layer.h; sourceTree = SOURCE_ROOT; };
+		5A6E2C3595E6890A79D28C8A /* caffe.proto */ /* caffe.proto */ = {isa = PBXFileReference; lastKnownFileType = file.proto; name = caffe.proto; path = ../../Source/tiny_dnn/io/caffe/caffe.proto; sourceTree = SOURCE_ROOT; };
+		5C6789EC46F4A07830243FD3 /* gru_cell_op_internal.h */ /* gru_cell_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gru_cell_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/gru_cell_op_internal.h; sourceTree = SOURCE_ROOT; };
+		5D47FA243E8B3928620CCF5C /* deconvolutional_layer.h */ /* deconvolutional_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = deconvolutional_layer.h; path = ../../Source/tiny_dnn/layers/deconvolutional_layer.h; sourceTree = SOURCE_ROOT; };
+		5D632E7B8FE792ED49D5FBCA /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
+		6068EEA097CC336BA7FC9FC7 /* optimizer.h */ /* optimizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = optimizer.h; path = ../../Source/tiny_dnn/optimizers/optimizer.h; sourceTree = SOURCE_ROOT; };
+		60DFC72D2D7F1CCA9753DB49 /* quantized_fully_connected_layer.h */ /* quantized_fully_connected_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = quantized_fully_connected_layer.h; path = ../../Source/tiny_dnn/layers/quantized_fully_connected_layer.h; sourceTree = SOURCE_ROOT; };
+		6427765F0C9DB1386132CB30 /* image.h */ /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = image.h; path = ../../Source/tiny_dnn/util/image.h; sourceTree = SOURCE_ROOT; };
+		648A4890B1998F0DB5E14CFB /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Users/matttwitchen/Desktop/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
+		65BBEBC1C39B34EC705A00FF /* xview.hpp */ /* xview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xview.hpp; path = ../../Source/tiny_dnn/xtensor/xview.hpp; sourceTree = SOURCE_ROOT; };
+		65D1B35A5CE3478A951C05F1 /* rnn_cell_params.h */ /* rnn_cell_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rnn_cell_params.h; path = ../../Source/tiny_dnn/core/params/rnn_cell_params.h; sourceTree = SOURCE_ROOT; };
+		661DE49CA77968111E2F446F /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
+		683915D109BCB7182B4A7EE4 /* linear_layer.h */ /* linear_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = linear_layer.h; path = ../../Source/tiny_dnn/layers/linear_layer.h; sourceTree = SOURCE_ROOT; };
+		6877915F27B983CD2DEDFFF1 /* conv2d_op_avx.h */ /* conv2d_op_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_op_avx.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_op_avx.h; sourceTree = SOURCE_ROOT; };
+		6988D8BC0D558E9732BD2399 /* util.h */ /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = util.h; path = ../../Source/tiny_dnn/util/util.h; sourceTree = SOURCE_ROOT; };
+		69B17C671F2CE47C52E25F80 /* lstm_cell_op.h */ /* lstm_cell_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstm_cell_op.h; path = ../../Source/tiny_dnn/core/kernels/lstm_cell_op.h; sourceTree = SOURCE_ROOT; };
+		69F246E595F212FA6DF82C79 /* node.h */ /* node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = node.h; path = ../../Source/tiny_dnn/node.h; sourceTree = SOURCE_ROOT; };
+		6B3EAC7023F47DC78F2F7FC0 /* sigmoid_layer.h */ /* sigmoid_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sigmoid_layer.h; path = ../../Source/tiny_dnn/activations/sigmoid_layer.h; sourceTree = SOURCE_ROOT; };
+		6BFF2D72969D8286AC713267 /* nnp_deconv2d_kernel.h */ /* nnp_deconv2d_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = nnp_deconv2d_kernel.h; path = ../../Source/tiny_dnn/core/kernels/nnp_deconv2d_kernel.h; sourceTree = SOURCE_ROOT; };
+		6D3DF008B3BD4B3CEC87CBA7 /* lstm_cell_grad_op.h */ /* lstm_cell_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstm_cell_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/lstm_cell_grad_op.h; sourceTree = SOURCE_ROOT; };
+		6DB5EB2D9F81DC52FCB50532 /* dropout_layer.h */ /* dropout_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = dropout_layer.h; path = ../../Source/tiny_dnn/layers/dropout_layer.h; sourceTree = SOURCE_ROOT; };
+		726CCF481AC660BCEA84A437 /* xslice.hpp */ /* xslice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xslice.hpp; path = ../../Source/tiny_dnn/xtensor/xslice.hpp; sourceTree = SOURCE_ROOT; };
+		75DC37D395D2D430A7290E6C /* arithmetic_layer.h */ /* arithmetic_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = arithmetic_layer.h; path = ../../Source/tiny_dnn/layers/arithmetic_layer.h; sourceTree = SOURCE_ROOT; };
+		761B5F2080F6C1A776ECEF0F /* xbuffer_adaptor.hpp */ /* xbuffer_adaptor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xbuffer_adaptor.hpp; path = ../../Source/tiny_dnn/xtensor/xbuffer_adaptor.hpp; sourceTree = SOURCE_ROOT; };
+		76B0F60F162ED032EBF63670 /* xarray.hpp */ /* xarray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xarray.hpp; path = ../../Source/tiny_dnn/xtensor/xarray.hpp; sourceTree = SOURCE_ROOT; };
+		76C78B1883540675364FC165 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		78B092C124EA8BDB4515C8B0 /* session.h */ /* session.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = session.h; path = ../../Source/tiny_dnn/core/session.h; sourceTree = SOURCE_ROOT; };
+		79D39C2105970E53F7E3EB89 /* xoperation.hpp */ /* xoperation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xoperation.hpp; path = ../../Source/tiny_dnn/xtensor/xoperation.hpp; sourceTree = SOURCE_ROOT; };
+		7A400571596AF78F7C890A3D /* xexception.hpp */ /* xexception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xexception.hpp; path = ../../Source/tiny_dnn/xtensor/xexception.hpp; sourceTree = SOURCE_ROOT; };
+		7D3AD5D2C1C4901E454FFBF0 /* tiny_quantized_deconv2d_kernel.h */ /* tiny_quantized_deconv2d_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantized_deconv2d_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantized_deconv2d_kernel.h; sourceTree = SOURCE_ROOT; };
+		7D535EC92E1D04B342509891 /* xbuilder.hpp */ /* xbuilder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xbuilder.hpp; path = ../../Source/tiny_dnn/xtensor/xbuilder.hpp; sourceTree = SOURCE_ROOT; };
+		7E05F6E56C731D976A5AB227 /* global_avepool_op_avx.h */ /* global_avepool_op_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_avepool_op_avx.h; path = ../../Source/tiny_dnn/core/kernels/global_avepool_op_avx.h; sourceTree = SOURCE_ROOT; };
+		825B0632AFFEF27F95386F40 /* recurrent_layer.h */ /* recurrent_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = recurrent_layer.h; path = ../../Source/tiny_dnn/layers/recurrent_layer.h; sourceTree = SOURCE_ROOT; };
+		82FE2D793F1201FCCFE109FB /* selu_layer.h */ /* selu_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = selu_layer.h; path = ../../Source/tiny_dnn/activations/selu_layer.h; sourceTree = SOURCE_ROOT; };
+		84206D714E748742A57F22B3 /* deconv_params.h */ /* deconv_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = deconv_params.h; path = ../../Source/tiny_dnn/core/params/deconv_params.h; sourceTree = SOURCE_ROOT; };
+		844C3BFBF5A7AC6A38F9713E /* batch_normalization_layer.h */ /* batch_normalization_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = batch_normalization_layer.h; path = ../../Source/tiny_dnn/layers/batch_normalization_layer.h; sourceTree = SOURCE_ROOT; };
+		871A712DDE1F27EB779D93B5 /* layers.h */ /* layers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = layers.h; path = ../../Source/tiny_dnn/layers/layers.h; sourceTree = SOURCE_ROOT; };
+		87E0A5BEB44D90412CBA725A /* xreducer.hpp */ /* xreducer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xreducer.hpp; path = ../../Source/tiny_dnn/xtensor/xreducer.hpp; sourceTree = SOURCE_ROOT; };
+		8C4674BD4F5D5B2B86C1E3C7 /* nn_error.h */ /* nn_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = nn_error.h; path = ../../Source/tiny_dnn/util/nn_error.h; sourceTree = SOURCE_ROOT; };
+		8F0EC1D4E243C34C0540DC0B /* layer_factory.h */ /* layer_factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = layer_factory.h; path = ../../Source/tiny_dnn/io/caffe/layer_factory.h; sourceTree = SOURCE_ROOT; };
+		90061B19A0D848219DE8C67F /* tensor_utils.h */ /* tensor_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tensor_utils.h; path = ../../Source/tiny_dnn/core/framework/tensor_utils.h; sourceTree = SOURCE_ROOT; };
+		910D9121AE75F38A90F905BB /* gru_cell_grad_op.h */ /* gru_cell_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gru_cell_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/gru_cell_grad_op.h; sourceTree = SOURCE_ROOT; };
+		9140287E7FB3ACF56144A66B /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
+		915E16D0AE24E0C564E2B09D /* rnn_cell_grad_op.h */ /* rnn_cell_grad_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rnn_cell_grad_op.h; path = ../../Source/tiny_dnn/core/kernels/rnn_cell_grad_op.h; sourceTree = SOURCE_ROOT; };
+		91BE084FF72A11FB2B0F37CA /* relu_layer.h */ /* relu_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = relu_layer.h; path = ../../Source/tiny_dnn/activations/relu_layer.h; sourceTree = SOURCE_ROOT; };
+		925F41A4040CCD02D507AFD5 /* backend_tiny.h */ /* backend_tiny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = backend_tiny.h; path = ../../Source/tiny_dnn/core/backend_tiny.h; sourceTree = SOURCE_ROOT; };
+		92932BC88741B1D2D2425999 /* conv2d_op.h */ /* conv2d_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_op.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_op.h; sourceTree = SOURCE_ROOT; };
+		92BC4E2EC16CEA553EE7B755 /* conv2d_grad_op_avx.h */ /* conv2d_grad_op_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv2d_grad_op_avx.h; path = ../../Source/tiny_dnn/core/kernels/conv2d_grad_op_avx.h; sourceTree = SOURCE_ROOT; };
+		9308784002DD7F4B6F06AB28 /* elu_layer.h */ /* elu_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = elu_layer.h; path = ../../Source/tiny_dnn/activations/elu_layer.h; sourceTree = SOURCE_ROOT; };
+		956A0B254DF747DCE6E5A7F5 /* rnn_cell.h */ /* rnn_cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rnn_cell.h; path = ../../Source/tiny_dnn/layers/rnn_cell.h; sourceTree = SOURCE_ROOT; };
+		95FBDCE859C296834A9C5BF7 /* maxpool_op.h */ /* maxpool_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = maxpool_op.h; path = ../../Source/tiny_dnn/core/kernels/maxpool_op.h; sourceTree = SOURCE_ROOT; };
+		971BD2B051B8DD7997E5690B /* xview_utils.hpp */ /* xview_utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xview_utils.hpp; path = ../../Source/tiny_dnn/xtensor/xview_utils.hpp; sourceTree = SOURCE_ROOT; };
+		9B4A16E7D6F41FBD12354F86 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
+		9BF8A77BA2023EAAA00BE489 /* maxpool_op_nnpack.h */ /* maxpool_op_nnpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = maxpool_op_nnpack.h; path = ../../Source/tiny_dnn/core/kernels/maxpool_op_nnpack.h; sourceTree = SOURCE_ROOT; };
+		9D86998047191AE1123F71F4 /* global_avepool_params.h */ /* global_avepool_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_avepool_params.h; path = ../../Source/tiny_dnn/core/params/global_avepool_params.h; sourceTree = SOURCE_ROOT; };
+		9D89F3E4E947EFD20A8F55F2 /* softmax_layer.h */ /* softmax_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = softmax_layer.h; path = ../../Source/tiny_dnn/activations/softmax_layer.h; sourceTree = SOURCE_ROOT; };
+		9F691EC296F11FA504F24433 /* xstridedview.hpp */ /* xstridedview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xstridedview.hpp; path = ../../Source/tiny_dnn/xtensor/xstridedview.hpp; sourceTree = SOURCE_ROOT; };
+		A0CEE1F8AC99AB7627074AC3 /* layer_factory.h */ /* layer_factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = layer_factory.h; path = ../../Source/tiny_dnn/io/layer_factory.h; sourceTree = SOURCE_ROOT; };
+		A191DBEF79AC1B03CDC95F5B /* serialization_functions.h */ /* serialization_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = serialization_functions.h; path = ../../Source/tiny_dnn/util/serialization_functions.h; sourceTree = SOURCE_ROOT; };
+		A1A5502B7A198F59364876D0 /* gru_cell_params.h */ /* gru_cell_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gru_cell_params.h; path = ../../Source/tiny_dnn/core/params/gru_cell_params.h; sourceTree = SOURCE_ROOT; };
+		A222EA370DECCF5B9AA5AEB4 /* random.h */ /* random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = random.h; path = ../../Source/tiny_dnn/util/random.h; sourceTree = SOURCE_ROOT; };
+		A2B925503F65C27588779FE5 /* tanh_layer.h */ /* tanh_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tanh_layer.h; path = ../../Source/tiny_dnn/activations/tanh_layer.h; sourceTree = SOURCE_ROOT; };
+		A3281651430C57D9FCAEC47D /* params.h */ /* params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = params.h; path = ../../Source/tiny_dnn/core/params/params.h; sourceTree = SOURCE_ROOT; };
+		A3360A5F8D212C3288A420C1 /* cell.h */ /* cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cell.h; path = ../../Source/tiny_dnn/layers/cell.h; sourceTree = SOURCE_ROOT; };
+		A35E8609CAB4D5FEB6F228A9 /* zero_pad_layer.h */ /* zero_pad_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = zero_pad_layer.h; path = ../../Source/tiny_dnn/layers/zero_pad_layer.h; sourceTree = SOURCE_ROOT; };
+		A5C11CFF5DB6A43B858D6DEE /* gradient_check.h */ /* gradient_check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gradient_check.h; path = ../../Source/tiny_dnn/util/gradient_check.h; sourceTree = SOURCE_ROOT; };
+		A64569A327445622826453DC /* tiny_quantized_fully_connected_kernel.h */ /* tiny_quantized_fully_connected_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantized_fully_connected_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantized_fully_connected_kernel.h; sourceTree = SOURCE_ROOT; };
+		A6D1633133A05A1A2331F277 /* xexpression.hpp */ /* xexpression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xexpression.hpp; path = ../../Source/tiny_dnn/xtensor/xexpression.hpp; sourceTree = SOURCE_ROOT; };
+		A8E4B9796ACEAD8AF75517E6 /* config.h */ /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../Source/tiny_dnn/config.h; sourceTree = SOURCE_ROOT; };
+		A94904E1F68E3FCD049B5BB1 /* xtensor_config.hpp */ /* xtensor_config.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xtensor_config.hpp; path = ../../Source/tiny_dnn/xtensor/xtensor_config.hpp; sourceTree = SOURCE_ROOT; };
+		ABC1E1D8C1FE92F4EC2852DA /* colored_print.h */ /* colored_print.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = colored_print.h; path = ../../Source/tiny_dnn/util/colored_print.h; sourceTree = SOURCE_ROOT; };
+		AD1B16A5459DC9B8453B63DC /* Foundation.framework */ /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE82CE23B445A8800393714D /* avx_kernel_common.h */ /* avx_kernel_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = avx_kernel_common.h; path = ../../Source/tiny_dnn/core/kernels/avx_kernel_common.h; sourceTree = SOURCE_ROOT; };
+		B20DDC3ADC1419F1470E31F9 /* maxpool_op_internal.h */ /* maxpool_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = maxpool_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/maxpool_op_internal.h; sourceTree = SOURCE_ROOT; };
+		B2E1F53206E7E0A4E873E6CF /* xsemantic.hpp */ /* xsemantic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xsemantic.hpp; path = ../../Source/tiny_dnn/xtensor/xsemantic.hpp; sourceTree = SOURCE_ROOT; };
+		B4B1C28E2B79BAB871CA306F /* layer_factory_impl.h */ /* layer_factory_impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = layer_factory_impl.h; path = ../../Source/tiny_dnn/io/caffe/layer_factory_impl.h; sourceTree = SOURCE_ROOT; };
+		B5C76EB1055D2C98BD23850E /* xrandom.hpp */ /* xrandom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xrandom.hpp; path = ../../Source/tiny_dnn/xtensor/xrandom.hpp; sourceTree = SOURCE_ROOT; };
+		B7FB41B5659BA63E8F4DAD5A /* fully_connected_op_internal.h */ /* fully_connected_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op_internal.h; sourceTree = SOURCE_ROOT; };
+		B8138B564380803303483D8B /* layer.h */ /* layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = layer.h; path = ../../Source/tiny_dnn/layers/layer.h; sourceTree = SOURCE_ROOT; };
+		B9DBE8C7C42BE462A2A62987 /* global_avepool_op.h */ /* global_avepool_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_avepool_op.h; path = ../../Source/tiny_dnn/core/kernels/global_avepool_op.h; sourceTree = SOURCE_ROOT; };
+		B9F89203D1D1E880D3E2E317 /* cifar10_parser.h */ /* cifar10_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cifar10_parser.h; path = ../../Source/tiny_dnn/io/cifar10_parser.h; sourceTree = SOURCE_ROOT; };
+		BB1C61D01D2DABD46A53D573 /* slice_layer.h */ /* slice_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = slice_layer.h; path = ../../Source/tiny_dnn/layers/slice_layer.h; sourceTree = SOURCE_ROOT; };
+		BB6B1241DC4A8BA9B88C2A19 /* partial_connected_layer.h */ /* partial_connected_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = partial_connected_layer.h; path = ../../Source/tiny_dnn/layers/partial_connected_layer.h; sourceTree = SOURCE_ROOT; };
+		BC9DE6F075BC85697138B2D1 /* xaxis_iterator.hpp */ /* xaxis_iterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xaxis_iterator.hpp; path = ../../Source/tiny_dnn/xtensor/xaxis_iterator.hpp; sourceTree = SOURCE_ROOT; };
+		BE63C8E394B3902D3F958471 /* gru_cell.h */ /* gru_cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gru_cell.h; path = ../../Source/tiny_dnn/layers/gru_cell.h; sourceTree = SOURCE_ROOT; };
+		BEA8D6F3E46D8974EC16A3A3 /* tensor.h */ /* tensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tensor.h; path = ../../Source/tiny_dnn/core/framework/tensor.h; sourceTree = SOURCE_ROOT; };
+		C13F30A746631EBDCB1C36DB /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Users/matttwitchen/Desktop/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
+		C26187041C0E8C37AA5838A9 /* cells.h */ /* cells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cells.h; path = ../../Source/tiny_dnn/layers/cells.h; sourceTree = SOURCE_ROOT; };
+		C298FD86C1060F6AEBCA8398 /* tiny_deconv2d_back_kernel.h */ /* tiny_deconv2d_back_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_deconv2d_back_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_deconv2d_back_kernel.h; sourceTree = SOURCE_ROOT; };
+		C49EF4FD1BEE1CEC30F87229 /* mnist_parser.h */ /* mnist_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mnist_parser.h; path = ../../Source/tiny_dnn/io/mnist_parser.h; sourceTree = SOURCE_ROOT; };
+		C55CE6678CF0836FDBB9CBA7 /* avx_deconv2d_kernel.h */ /* avx_deconv2d_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = avx_deconv2d_kernel.h; path = ../../Source/tiny_dnn/core/kernels/avx_deconv2d_kernel.h; sourceTree = SOURCE_ROOT; };
+		C820767B38C06341D42C8DE9 /* deform.h */ /* deform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = deform.h; path = ../../Source/tiny_dnn/util/deform.h; sourceTree = SOURCE_ROOT; };
+		C9492979DDD59B82F63462D8 /* xindexview.hpp */ /* xindexview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xindexview.hpp; path = ../../Source/tiny_dnn/xtensor/xindexview.hpp; sourceTree = SOURCE_ROOT; };
+		CC634C7B555BC4540E4D027B /* quantized_convolutional_layer.h */ /* quantized_convolutional_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = quantized_convolutional_layer.h; path = ../../Source/tiny_dnn/layers/quantized_convolutional_layer.h; sourceTree = SOURCE_ROOT; };
+		CD3A925AC8307477788209BB /* fully_connected_op.h */ /* fully_connected_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op.h; sourceTree = SOURCE_ROOT; };
+		CE2A06900B86B0EA87FDE9E8 /* backend_avx.h */ /* backend_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = backend_avx.h; path = ../../Source/tiny_dnn/core/backend_avx.h; sourceTree = SOURCE_ROOT; };
+		CE4C897BE4FFBAC8821BCBFE /* nms.h */ /* nms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = nms.h; path = ../../Source/tiny_dnn/util/nms.h; sourceTree = SOURCE_ROOT; };
+		CFDE2E7D96186AC55E6C9653 /* maxpool_op_avx.h */ /* maxpool_op_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = maxpool_op_avx.h; path = ../../Source/tiny_dnn/core/kernels/maxpool_op_avx.h; sourceTree = SOURCE_ROOT; };
+		D226FDA8DFE1210DD175398E /* xmath.hpp */ /* xmath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xmath.hpp; path = ../../Source/tiny_dnn/xtensor/xmath.hpp; sourceTree = SOURCE_ROOT; };
+		D2754E137BF9B10B5AF4821E /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D4CE78032611B9E5C81559B2 /* global_avepool_op_internal.h */ /* global_avepool_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_avepool_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/global_avepool_op_internal.h; sourceTree = SOURCE_ROOT; };
+		D54D1749A42965D62B5551B0 /* fully_connected_op_nnpack.h */ /* fully_connected_op_nnpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op_nnpack.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op_nnpack.h; sourceTree = SOURCE_ROOT; };
+		D68B574A8284C26E00377F98 /* xassign.hpp */ /* xassign.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xassign.hpp; path = ../../Source/tiny_dnn/xtensor/xassign.hpp; sourceTree = SOURCE_ROOT; };
+		D76CEA025A49C636049BC126 /* xadapt.hpp */ /* xadapt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xadapt.hpp; path = ../../Source/tiny_dnn/xtensor/xadapt.hpp; sourceTree = SOURCE_ROOT; };
+		D86FB2716D90B8451E3C529F /* lstm_cell.h */ /* lstm_cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lstm_cell.h; path = ../../Source/tiny_dnn/layers/lstm_cell.h; sourceTree = SOURCE_ROOT; };
+		DDD2B952F94568BE50C5C810 /* aligned_allocator.h */ /* aligned_allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aligned_allocator.h; path = ../../Source/tiny_dnn/util/aligned_allocator.h; sourceTree = SOURCE_ROOT; };
+		DEB58DC215A1380DA4C1AD0F /* tiny_dnn.h */ /* tiny_dnn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_dnn.h; path = ../../Source/tiny_dnn/tiny_dnn.h; sourceTree = SOURCE_ROOT; };
+		DF5F2DB168C24FAA3AEACD96 /* Main.cpp */ /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../../Source/Main.cpp; sourceTree = SOURCE_ROOT; };
+		E25748CDEEF81E5598E2B436 /* xtensor_forward.hpp */ /* xtensor_forward.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xtensor_forward.hpp; path = ../../Source/tiny_dnn/xtensor/xtensor_forward.hpp; sourceTree = SOURCE_ROOT; };
+		E3A5E2F9D530A4AB9A57B0E8 /* xfunctorview.hpp */ /* xfunctorview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xfunctorview.hpp; path = ../../Source/tiny_dnn/xtensor/xfunctorview.hpp; sourceTree = SOURCE_ROOT; };
+		E530CFC32440603564F493EA /* network.h */ /* network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = network.h; path = ../../Source/tiny_dnn/network.h; sourceTree = SOURCE_ROOT; };
+		E5C7ADE2FA0C00B1007BBE61 /* program_manager.h */ /* program_manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = program_manager.h; path = ../../Source/tiny_dnn/core/framework/program_manager.h; sourceTree = SOURCE_ROOT; };
+		E5F22E659888ECBB3EDA32D0 /* graph_visualizer.h */ /* graph_visualizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = graph_visualizer.h; path = ../../Source/tiny_dnn/util/graph_visualizer.h; sourceTree = SOURCE_ROOT; };
+		E704374FE7C549ED8993A518 /* program.h */ /* program.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = program.h; path = ../../Source/tiny_dnn/core/framework/program.h; sourceTree = SOURCE_ROOT; };
+		EA02CF4E6AB60598204BD2C3 /* xcontainer.hpp */ /* xcontainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xcontainer.hpp; path = ../../Source/tiny_dnn/xtensor/xcontainer.hpp; sourceTree = SOURCE_ROOT; };
+		EA033FBB68D6C486641BFDE1 /* avx_deconv2d_back_kernel.h */ /* avx_deconv2d_back_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = avx_deconv2d_back_kernel.h; path = ../../Source/tiny_dnn/core/kernels/avx_deconv2d_back_kernel.h; sourceTree = SOURCE_ROOT; };
+		EAA697D187694EE085B3B3A9 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
+		EAB9E4CF7B2A55BC4B6DE9EA /* xiterable.hpp */ /* xiterable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xiterable.hpp; path = ../../Source/tiny_dnn/xtensor/xiterable.hpp; sourceTree = SOURCE_ROOT; };
+		EB8E5DB880285322855D22CF /* max_pooling_layer.h */ /* max_pooling_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = max_pooling_layer.h; path = ../../Source/tiny_dnn/layers/max_pooling_layer.h; sourceTree = SOURCE_ROOT; };
+		EBA275EA6A968F66C16CFC8B /* concat_layer.h */ /* concat_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = concat_layer.h; path = ../../Source/tiny_dnn/layers/concat_layer.h; sourceTree = SOURCE_ROOT; };
+		EC7AF3C84876DAEF3A90CE04 /* lrn_layer.h */ /* lrn_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lrn_layer.h; path = ../../Source/tiny_dnn/layers/lrn_layer.h; sourceTree = SOURCE_ROOT; };
+		ECD547B62EB750209A6C2536 /* activation_layer.h */ /* activation_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = activation_layer.h; path = ../../Source/tiny_dnn/activations/activation_layer.h; sourceTree = SOURCE_ROOT; };
+		EDBE994F0220730464D50929 /* op_kernel.h */ /* op_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = op_kernel.h; path = ../../Source/tiny_dnn/core/framework/op_kernel.h; sourceTree = SOURCE_ROOT; };
+		EF3687EAD6AE98358DAD5EED /* xtensor.hpp */ /* xtensor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xtensor.hpp; path = ../../Source/tiny_dnn/xtensor/xtensor.hpp; sourceTree = SOURCE_ROOT; };
+		F026E09B5779311673DA0616 /* xinfo.hpp */ /* xinfo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xinfo.hpp; path = ../../Source/tiny_dnn/xtensor/xinfo.hpp; sourceTree = SOURCE_ROOT; };
+		F1F63FB5DD44664BC7AF37F4 /* average_pooling_layer.h */ /* average_pooling_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = average_pooling_layer.h; path = ../../Source/tiny_dnn/layers/average_pooling_layer.h; sourceTree = SOURCE_ROOT; };
+		F332CD6345CA7BC39FB051DF /* xfunction.hpp */ /* xfunction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xfunction.hpp; path = ../../Source/tiny_dnn/xtensor/xfunction.hpp; sourceTree = SOURCE_ROOT; };
+		F33DFFFF504D1FD506482491 /* global_average_pooling_layer.h */ /* global_average_pooling_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_average_pooling_layer.h; path = ../../Source/tiny_dnn/layers/global_average_pooling_layer.h; sourceTree = SOURCE_ROOT; };
+		F3E4708C9F95C4AAD6434EE8 /* convolutional_layer.h */ /* convolutional_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = convolutional_layer.h; path = ../../Source/tiny_dnn/layers/convolutional_layer.h; sourceTree = SOURCE_ROOT; };
+		F45E0E5FE3DAF3EC5C200CB3 /* BinaryData.h */ /* BinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = SOURCE_ROOT; };
+		F57D3C62639D7E4C48C99C1D /* xcsv.hpp */ /* xcsv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xcsv.hpp; path = ../../Source/tiny_dnn/xtensor/xcsv.hpp; sourceTree = SOURCE_ROOT; };
+		F6069F1F7648044A6B4DC516 /* device.fwd.h */ /* device.fwd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = device.fwd.h; path = ../../Source/tiny_dnn/core/framework/device.fwd.h; sourceTree = SOURCE_ROOT; };
+		F71BEA42AA0BD1B2F53CF24D /* deserialization_helper.h */ /* deserialization_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = deserialization_helper.h; path = ../../Source/tiny_dnn/util/deserialization_helper.h; sourceTree = SOURCE_ROOT; };
+		F72FCDA968EAF5CF65F37F00 /* macro.h */ /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = macro.h; path = ../../Source/tiny_dnn/util/macro.h; sourceTree = SOURCE_ROOT; };
+		FAAF009FEEF62158FE2C345C /* gru_cell_op.h */ /* gru_cell_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gru_cell_op.h; path = ../../Source/tiny_dnn/core/kernels/gru_cell_op.h; sourceTree = SOURCE_ROOT; };
+		FB7F026413BEA0465A856458 /* input_layer.h */ /* input_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = input_layer.h; path = ../../Source/tiny_dnn/layers/input_layer.h; sourceTree = SOURCE_ROOT; };
+		FD242F001E38448B41F4501B /* xiterator.hpp */ /* xiterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xiterator.hpp; path = ../../Source/tiny_dnn/xtensor/xiterator.hpp; sourceTree = SOURCE_ROOT; };
+		FD4E46391AEFBF6E1E6906CF /* maxpool_params.h */ /* maxpool_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = maxpool_params.h; path = ../../Source/tiny_dnn/core/params/maxpool_params.h; sourceTree = SOURCE_ROOT; };
+		FDF4985B91DD2CD1725AFE20 /* conv_params.h */ /* conv_params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = conv_params.h; path = ../../Source/tiny_dnn/core/params/conv_params.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5FB8B89B936E0FBF1FF6E3B = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF343930D9DDC53B71C7844E,
+				363601FB4800DB3AA2EF8472,
+				92E83509A4397CE0BDAB749C,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00EFA6EC6E7530C189DF16BF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				503D96975700931AAD2BC5F6,
+				5D97A8247DAD7F6C5305F2E8,
+				4596FA1D2D5373F33F042645,
+				DC3F9C8D50486A8C5A94A232,
+				51286ECFD6949BF5459D8241,
+				3DA7D6AF5AD09B2BD46F65C5,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		01BCDC8E03011B995BFC9144 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				F6069F1F7648044A6B4DC516,
+				1338B118824CCC14F5694911,
+				EDBE994F0220730464D50929,
+				E704374FE7C549ED8993A518,
+				E5C7ADE2FA0C00B1007BBE61,
+				BEA8D6F3E46D8974EC16A3A3,
+				90061B19A0D848219DE8C67F,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
+		0E59FED578776355B5022C6B /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				75DC37D395D2D430A7290E6C,
+				F1F63FB5DD44664BC7AF37F4,
+				532C3BFF3F4C7F1939AF42E4,
+				844C3BFBF5A7AC6A38F9713E,
+				A3360A5F8D212C3288A420C1,
+				C26187041C0E8C37AA5838A9,
+				EBA275EA6A968F66C16CFC8B,
+				F3E4708C9F95C4AAD6434EE8,
+				5D47FA243E8B3928620CCF5C,
+				6DB5EB2D9F81DC52FCB50532,
+				49B1AD2AC8C9A0FB25FD68FD,
+				F33DFFFF504D1FD506482491,
+				BE63C8E394B3902D3F958471,
+				FB7F026413BEA0465A856458,
+				03080C6B3FE45C7FB6B648A4,
+				B8138B564380803303483D8B,
+				871A712DDE1F27EB779D93B5,
+				683915D109BCB7182B4A7EE4,
+				EC7AF3C84876DAEF3A90CE04,
+				D86FB2716D90B8451E3C529F,
+				EB8E5DB880285322855D22CF,
+				3A8C0B25C9DBAAD3C1190F4E,
+				BB6B1241DC4A8BA9B88C2A19,
+				1CD4579FCCE18AFBE6516B6F,
+				CC634C7B555BC4540E4D027B,
+				0FBC29FAA4479C75D7B56EB4,
+				60DFC72D2D7F1CCA9753DB49,
+				825B0632AFFEF27F95386F40,
+				956A0B254DF747DCE6E5A7F5,
+				BB1C61D01D2DABD46A53D573,
+				A35E8609CAB4D5FEB6F228A9,
+			);
+			name = layers;
+			sourceTree = "<group>";
+		};
+		2984064FA2383F9B8175C543 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				01BCDC8E03011B995BFC9144,
+				ADA6F88F5B3A886C81B87F1B,
+				4A71A39904D2445046AEE77A,
+				237FAB4431C037A954330906,
+				CE2A06900B86B0EA87FDE9E8,
+				925F41A4040CCD02D507AFD5,
+				78B092C124EA8BDB4515C8B0,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		33561C17346BA467BBF5223B /* xtensor */ = {
+			isa = PBXGroup;
+			children = (
+				D76CEA025A49C636049BC126,
+				76B0F60F162ED032EBF63670,
+				D68B574A8284C26E00377F98,
+				BC9DE6F075BC85697138B2D1,
+				4451194066B7515076EB66B3,
+				761B5F2080F6C1A776ECEF0F,
+				7D535EC92E1D04B342509891,
+				44F6B715B4868E3B40AF1180,
+				EA02CF4E6AB60598204BD2C3,
+				F57D3C62639D7E4C48C99C1D,
+				3677C1442005F99AE6370C0D,
+				7A400571596AF78F7C890A3D,
+				A6D1633133A05A1A2331F277,
+				F332CD6345CA7BC39FB051DF,
+				E3A5E2F9D530A4AB9A57B0E8,
+				2AB99B6C9EF01104A17219E5,
+				C9492979DDD59B82F63462D8,
+				F026E09B5779311673DA0616,
+				0C1E03F7AAF12BABD003CC94,
+				EAB9E4CF7B2A55BC4B6DE9EA,
+				FD242F001E38448B41F4501B,
+				3FD038662E5A9425688048E9,
+				D226FDA8DFE1210DD175398E,
+				1B69E1E5A40E5D52E7FEC845,
+				2A291D55F79A9AB06610F67E,
+				48BCD726A800BEA6633F15A2,
+				79D39C2105970E53F7E3EB89,
+				2F707BCA50E9C9583296210F,
+				B5C76EB1055D2C98BD23850E,
+				87E0A5BEB44D90412CBA725A,
+				122DB3F375B4CF2A331B3588,
+				B2E1F53206E7E0A4E873E6CF,
+				726CCF481AC660BCEA84A437,
+				33159337B7633BA8715F317A,
+				9F691EC296F11FA504F24433,
+				08BD0A62F9B751D75BB12FAB,
+				EF3687EAD6AE98358DAD5EED,
+				A94904E1F68E3FCD049B5BB1,
+				E25748CDEEF81E5598E2B436,
+				3ED2C9860509FFEF6B6206CA,
+				518B7970FA9360032C1183C1,
+				65BBEBC1C39B34EC705A00FF,
+				971BD2B051B8DD7997E5690B,
+			);
+			name = xtensor;
+			sourceTree = "<group>";
+		};
+		382657ED964194D8E9B6A315 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				05BAA25E85430C9232ACC74D,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		3DA7D6AF5AD09B2BD46F65C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34A8700B652997439698A762,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FE3546876A11D416C363803 /* lossfunctions */ = {
+			isa = PBXGroup;
+			children = (
+				5453301ED3A1BE8741D17D59,
+			);
+			name = lossfunctions;
+			sourceTree = "<group>";
+		};
+		4377A2CC3113310DB6CDA192 /* caffe */ = {
+			isa = PBXGroup;
+			children = (
+				5A6E2C3595E6890A79D28C8A,
+				18FC16CDE6481ECC9555D1A8,
+				8F0EC1D4E243C34C0540DC0B,
+				B4B1C28E2B79BAB871CA306F,
+			);
+			name = caffe;
+			sourceTree = "<group>";
+		};
+		4596FA1D2D5373F33F042645 /* JUCE Library Code */ = {
+			isa = PBXGroup;
+			children = (
+				9140287E7FB3ACF56144A66B,
+				F45E0E5FE3DAF3EC5C200CB3,
+				661DE49CA77968111E2F446F,
+				EAA697D187694EE085B3B3A9,
+				5D632E7B8FE792ED49D5FBCA,
+				9B4A16E7D6F41FBD12354F86,
+			);
+			name = "JUCE Library Code";
+			sourceTree = "<group>";
+		};
+		46FC12C3B097FA7701634062 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				4377A2CC3113310DB6CDA192,
+				B9F89203D1D1E880D3E2E317,
+				4AF7AF0326A889D60BB20E6F,
+				A0CEE1F8AC99AB7627074AC3,
+				C49EF4FD1BEE1CEC30F87229,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
+		4A71A39904D2445046AEE77A /* params */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4985B91DD2CD1725AFE20,
+				84206D714E748742A57F22B3,
+				42ABF70313384DBCC8E5A82A,
+				9D86998047191AE1123F71F4,
+				A1A5502B7A198F59364876D0,
+				34CEF548ADA53BD406CE141F,
+				FD4E46391AEFBF6E1E6906CF,
+				A3281651430C57D9FCAEC47D,
+				65D1B35A5CE3478A951C05F1,
+			);
+			name = params;
+			sourceTree = "<group>";
+		};
+		503D96975700931AAD2BC5F6 /* Tiny_DNN_Test_2 */ = {
+			isa = PBXGroup;
+			children = (
+				677FEEF308198AFB6AA14404,
+			);
+			name = Tiny_DNN_Test_2;
+			sourceTree = "<group>";
+		};
+		51286ECFD6949BF5459D8241 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76C78B1883540675364FC165,
+				AD1B16A5459DC9B8453B63DC,
+				D2754E137BF9B10B5AF4821E,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D97A8247DAD7F6C5305F2E8 /* JUCE Modules */ = {
+			isa = PBXGroup;
+			children = (
+				648A4890B1998F0DB5E14CFB,
+				3A803B8E756F27021288833F,
+				C13F30A746631EBDCB1C36DB,
+			);
+			name = "JUCE Modules";
+			sourceTree = "<group>";
+		};
+		6604D828E588FFDF10CB3A99 /* tiny_dnn */ = {
+			isa = PBXGroup;
+			children = (
+				6CA42F0E864613418DB94BC5,
+				2984064FA2383F9B8175C543,
+				46FC12C3B097FA7701634062,
+				0E59FED578776355B5022C6B,
+				3FE3546876A11D416C363803,
+				382657ED964194D8E9B6A315,
+				934E7C3C6ABDC5148EBD319E,
+				896830B9C0EB6F74E50E6F7E,
+				33561C17346BA467BBF5223B,
+				A8E4B9796ACEAD8AF75517E6,
+				E530CFC32440603564F493EA,
+				69F246E595F212FA6DF82C79,
+				181718CBE4B13768899CFAAA,
+				DEB58DC215A1380DA4C1AD0F,
+			);
+			name = tiny_dnn;
+			sourceTree = "<group>";
+		};
+		677FEEF308198AFB6AA14404 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6604D828E588FFDF10CB3A99,
+				DF5F2DB168C24FAA3AEACD96,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		6CA42F0E864613418DB94BC5 /* activations */ = {
+			isa = PBXGroup;
+			children = (
+				ECD547B62EB750209A6C2536,
+				43120869FBB72154AFA12C08,
+				9308784002DD7F4B6F06AB28,
+				4BB7F265ECF6FE63B29BC23F,
+				91BE084FF72A11FB2B0F37CA,
+				82FE2D793F1201FCCFE109FB,
+				6B3EAC7023F47DC78F2F7FC0,
+				9D89F3E4E947EFD20A8F55F2,
+				562E057257D25BBBE3BF19D0,
+				279CF67D0B76913837B95EB5,
+				A2B925503F65C27588779FE5,
+				59DC549DF8B2759282F33E22,
+			);
+			name = activations;
+			sourceTree = "<group>";
+		};
+		896830B9C0EB6F74E50E6F7E /* util */ = {
+			isa = PBXGroup;
+			children = (
+				DDD2B952F94568BE50C5C810,
+				ABC1E1D8C1FE92F4EC2852DA,
+				C820767B38C06341D42C8DE9,
+				F71BEA42AA0BD1B2F53CF24D,
+				A5C11CFF5DB6A43B858D6DEE,
+				E5F22E659888ECBB3EDA32D0,
+				6427765F0C9DB1386132CB30,
+				F72FCDA968EAF5CF65F37F00,
+				499C998110B11690A82144E5,
+				CE4C897BE4FFBAC8821BCBFE,
+				8C4674BD4F5D5B2B86C1E3C7,
+				1582A4AA2A989ABEBF768D2A,
+				4A47BB1287106DB142A04958,
+				A222EA370DECCF5B9AA5AEB4,
+				A191DBEF79AC1B03CDC95F5B,
+				561F61126645259FEB878791,
+				4B2AC236233A19840F012446,
+				4787438CD2A9F61EA1FCF31E,
+				6988D8BC0D558E9732BD2399,
+				20625FFE7475941997D88467,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		934E7C3C6ABDC5148EBD319E /* optimizers */ = {
+			isa = PBXGroup;
+			children = (
+				6068EEA097CC336BA7FC9FC7,
+			);
+			name = optimizers;
+			sourceTree = "<group>";
+		};
+		ADA6F88F5B3A886C81B87F1B /* kernels */ = {
+			isa = PBXGroup;
+			children = (
+				EA033FBB68D6C486641BFDE1,
+				C55CE6678CF0836FDBB9CBA7,
+				AE82CE23B445A8800393714D,
+				46E19EDBD8691189F3AC2D2C,
+				92BC4E2EC16CEA553EE7B755,
+				92932BC88741B1D2D2425999,
+				6877915F27B983CD2DEDFFF1,
+				27A66E481B7E50E63E0290F4,
+				1E3A7ABFE36628F8A30AC589,
+				4B2360D15213FF9FCC75B6E8,
+				33CFCBFC33AA1928227D787C,
+				14C3D22B8F24BF475A8A4F96,
+				CD3A925AC8307477788209BB,
+				22F0117012CD701F5C211896,
+				2E6A16EDCD46A3BD84678F7F,
+				1BCC6138FB6C88C74B25DA96,
+				B7FB41B5659BA63E8F4DAD5A,
+				D54D1749A42965D62B5551B0,
+				219A9F57831BAF9D1234A91A,
+				B9DBE8C7C42BE462A2A62987,
+				7E05F6E56C731D976A5AB227,
+				D4CE78032611B9E5C81559B2,
+				910D9121AE75F38A90F905BB,
+				FAAF009FEEF62158FE2C345C,
+				5C6789EC46F4A07830243FD3,
+				6D3DF008B3BD4B3CEC87CBA7,
+				69B17C671F2CE47C52E25F80,
+				389615C3C42063426415FAE9,
+				2B02769CA67B6C551FD43B7A,
+				95FBDCE859C296834A9C5BF7,
+				CFDE2E7D96186AC55E6C9653,
+				B20DDC3ADC1419F1470E31F9,
+				9BF8A77BA2023EAAA00BE489,
+				6BFF2D72969D8286AC713267,
+				915E16D0AE24E0C564E2B09D,
+				146FF673635079004F06C53D,
+				1DE4B589F990595199393ACE,
+				C298FD86C1060F6AEBCA8398,
+				3156222B4F39030563385ABB,
+				020A71D255066F68152611B4,
+				1A72F07F00F428722207A45E,
+				7D3AD5D2C1C4901E454FFBF0,
+				A64569A327445622826453DC,
+				0F6D147C2BAE4AA79AF470D8,
+			);
+			name = kernels;
+			sourceTree = "<group>";
+		};
+		DC3F9C8D50486A8C5A94A232 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				54F609D0EBE70928411A939D,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0ABD8D639D74427A090F7678 /* Tiny_DNN_Test_2 - ConsoleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B1B23851C4870E3C349667C;
+			buildPhases = (
+				FABDB2DA0327E9D2A9E4E24B,
+				0FE88BEC9D0138A56D8BF56E,
+				D5FB8B89B936E0FBF1FF6E3B,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tiny_DNN_Test_2 - ConsoleApp";
+			productName = Tiny_DNN_Test_2;
+			productReference = 34A8700B652997439698A762;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		168DFB5A261E7AA1991A6916 = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1340;
+				ORGANIZATIONNAME = "";
+			};
+			buildConfigurationList = EB6DBACC3057AAF2CDE810C1;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00EFA6EC6E7530C189DF16BF;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ABD8D639D74427A090F7678,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FABDB2DA0327E9D2A9E4E24B = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				918817EB4DB088DC115A2CCE,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FE88BEC9D0138A56D8BF56E = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C024208EB94432B77995FCF,
+				1EFA1B7C4C059830F186B365,
+				87916DFFAA8F6DB4DF0E999E,
+				0650D0453F2052D30DBA7F0D,
+				00D4FEECAE602A1B1282B86E,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04D43E16AC995068AB73BA34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
+				DEAD_CODE_STRIPPING = YES;
+				EXCLUDED_ARCHS = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_NDEBUG=1",
+					"NDEBUG=1",
+					"JUCE_DISPLAY_SPLASH_SCREEN=1",
+					"JUCE_USE_DARK_SPLASH_SCREEN=1",
+					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_MODULE_AVAILABLE_juce_core=1",
+					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
+					"JUCE_MODULE_AVAILABLE_juce_events=1",
+					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
+					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
+					"JUCE_STANDALONE_APPLICATION=1",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.0",
+					"JUCE_APP_VERSION_HEX=0x10000",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Unity=0",
+					"JucePlugin_Build_LV2=0",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../JuceLibraryCode",
+					"/Users/matttwitchen/Desktop/JUCE/modules",
+					"/Users/matttwitchen/Desktop/tiny-dnn-master",
+					"\"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "/usr/bin";
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/matttwitchen/Desktop/JUCE/modules /Users/matttwitchen/Desktop/tiny-dnn-master \"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Tiny_DNN_Test_2;
+				PRODUCT_NAME = "Tiny_DNN_Test_2";
+				USE_HEADERMAP = NO;
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
+			};
+			name = Release;
+		};
+		44EF9593ADBF415B7AD854E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Tiny_DNN_Test_2";
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wreorder";
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		6EED44A3D91B3E3BD74B0F45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_ARCHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+					"DEBUG=1",
+					"JUCE_DISPLAY_SPLASH_SCREEN=1",
+					"JUCE_USE_DARK_SPLASH_SCREEN=1",
+					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_MODULE_AVAILABLE_juce_core=1",
+					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
+					"JUCE_MODULE_AVAILABLE_juce_events=1",
+					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
+					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
+					"JUCE_STANDALONE_APPLICATION=1",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.0",
+					"JUCE_APP_VERSION_HEX=0x10000",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Unity=0",
+					"JucePlugin_Build_LV2=0",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../JuceLibraryCode",
+					"/Users/matttwitchen/Desktop/JUCE/modules",
+					"/Users/matttwitchen/Desktop/tiny-dnn-master",
+					"\"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "/usr/bin";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/matttwitchen/Desktop/JUCE/modules /Users/matttwitchen/Desktop/tiny-dnn-master \"/Users/matttwitchen/Desktop/Diss/Test Projects/Tiny_DNN_Test_2/Source/tiny_dnn\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Tiny_DNN_Test_2;
+				PRODUCT_NAME = "Tiny_DNN_Test_2";
+				USE_HEADERMAP = NO;
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
+			};
+			name = Debug;
+		};
+		E8DDE3B8F5142F3B59541D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_NAME = "Tiny_DNN_Test_2";
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wreorder";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B1B23851C4870E3C349667C = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EED44A3D91B3E3BD74B0F45,
+				04D43E16AC995068AB73BA34,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EB6DBACC3057AAF2CDE810C1 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44EF9593ADBF415B7AD854E2,
+				E8DDE3B8F5142F3B59541D05,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 168DFB5A261E7AA1991A6916 /* Project object */;
+}

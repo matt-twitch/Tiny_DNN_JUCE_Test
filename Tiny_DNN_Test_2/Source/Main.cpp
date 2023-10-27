@@ -14,37 +14,42 @@
 
 //std::vector<tiny_dnn::label_t> parse_Labels
 
-void construct_cnn() {
-
-/*
-    // ARCHITECTURE //
- 
-    // CNN for feature recognition
-    Conv1 - Filter size 16
-    MaxPool1 - Pool size 2
-    Conv2 - Filter size 32
-    MaxPool2 - Pool Size 2
-    Flatten
+void construct_rnn() {
     
-*/
+    tiny_dnn::network<tiny_dnn::sequential> rnn;
     
-    tiny_dnn::network<tiny_dnn::sequential> net;
-    
-    const size_t numSamples = 100;
+    // training data (84 x 4)
+    const size_t numSamples = 84;
     const size_t numFeatures = 4;
-    
-    // add layers
-    net << tiny_dnn::layers::conv(numSamples, numFeatures, 2, 1, 4) << tiny_dnn::activation::relu();
-    net << tiny_dnn::layers::max_pool(net.in_data_size(), 1, 0, 2);
-    net << tiny_dnn::layers::conv(4, 1, 2, 1, 4)  << tiny_dnn::activation::relu();
-    net << tiny_dnn::layers::max_pool(net.in_data_size(), 1, 0, 2);
-    net << tiny_dnn::layers::fc(4, 1, 0) << tiny_dnn::activation::relu();
-    
-    tiny_dnn::adam opt;
     
     // load training data
     std::vector<tiny_dnn::label_t> t_labels;
     std::vector<tiny_dnn::vec_t> t_data;
+    
+}
+
+void construct_cnn() {
+    
+    tiny_dnn::network<tiny_dnn::sequential> net;
+    
+    // training data (84 x 4)
+    const size_t numSamples = 84;
+    const size_t numFeatures = 4;
+    
+    // load training data
+    std::vector<tiny_dnn::label_t> t_labels;
+    std::vector<tiny_dnn::vec_t> t_data;
+    
+    // add layers
+    // width, height, kernel, input, output
+    net << tiny_dnn::layers::conv(4, 84, 5, 4, 16) << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::max_pool(2, 82, 16, 2);
+    net << tiny_dnn::layers::conv(4, 1, 2, 1, 4)  << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::ave_pool(28, 28, 6, 2);
+    net << tiny_dnn::layers::fc(4, 1, 0) << tiny_dnn::activation::relu();
+    
+    tiny_dnn::adam opt;
+    
     
 /*
     // add layers

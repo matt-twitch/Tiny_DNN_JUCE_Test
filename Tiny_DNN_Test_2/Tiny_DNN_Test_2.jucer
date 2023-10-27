@@ -304,6 +304,8 @@
       </GROUP>
       <FILE id="zhU9Ww" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
+    <FILE id="mtAEVV" name="Prelim_ADSR_CSV.txt" compile="0" resource="1"
+          file="Training data/Prelim_ADSR_CSV.txt"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
   <EXPORTFORMATS>

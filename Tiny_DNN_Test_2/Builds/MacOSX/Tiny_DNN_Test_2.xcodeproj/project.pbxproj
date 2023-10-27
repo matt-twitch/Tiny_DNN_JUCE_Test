@@ -162,6 +162,7 @@
 		B5C76EB1055D2C98BD23850E /* xrandom.hpp */ /* xrandom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xrandom.hpp; path = ../../Source/tiny_dnn/xtensor/xrandom.hpp; sourceTree = SOURCE_ROOT; };
 		B7FB41B5659BA63E8F4DAD5A /* fully_connected_op_internal.h */ /* fully_connected_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op_internal.h; sourceTree = SOURCE_ROOT; };
 		B8138B564380803303483D8B /* layer.h */ /* layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = layer.h; path = ../../Source/tiny_dnn/layers/layer.h; sourceTree = SOURCE_ROOT; };
+		B9B004A1DC003CEE08C32A4B /* Prelim_ADSR_CSV.txt */ /* Prelim_ADSR_CSV.txt */ = {isa = PBXFileReference; lastKnownFileType = text.txt; name = Prelim_ADSR_CSV.txt; path = "../../Training data/Prelim_ADSR_CSV.txt"; sourceTree = SOURCE_ROOT; };
 		B9DBE8C7C42BE462A2A62987 /* global_avepool_op.h */ /* global_avepool_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = global_avepool_op.h; path = ../../Source/tiny_dnn/core/kernels/global_avepool_op.h; sourceTree = SOURCE_ROOT; };
 		B9F89203D1D1E880D3E2E317 /* cifar10_parser.h */ /* cifar10_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cifar10_parser.h; path = ../../Source/tiny_dnn/io/cifar10_parser.h; sourceTree = SOURCE_ROOT; };
 		BB1C61D01D2DABD46A53D573 /* slice_layer.h */ /* slice_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = slice_layer.h; path = ../../Source/tiny_dnn/layers/slice_layer.h; sourceTree = SOURCE_ROOT; };
@@ -447,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				677FEEF308198AFB6AA14404,
+				B9B004A1DC003CEE08C32A4B,
 			);
 			name = Tiny_DNN_Test_2;
 			sourceTree = "<group>";

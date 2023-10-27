@@ -821,6 +821,96 @@ static const unsigned char temp_binary_data_1[] =
 
 const char* CPPLINT_cfg = (const char*) temp_binary_data_1;
 
+//================== Prelim_ADSR_CSV.txt ==================
+static const unsigned char temp_binary_data_2[] =
+"Attack,Decay,Sustain,Release,Sound Type\n"
+"0.1,0.3,0.5,0.2,Lead\n"
+"0.2,0.4,0.6,0.3,Lead\n"
+"0.4,0.6,0.4,0.5,Pad\n"
+"0.3,0.5,0.7,0.4,Pad\n"
+"0.15,0.25,0.7,0.2,Lead\n"
+"0.25,0.45,0.8,0.35,Lead\n"
+"0.35,0.55,0.6,0.45,Pad\n"
+"0.3,0.6,0.65,0.4,Pad\n"
+"0.12,0.32,0.58,0.18,Lead\n"
+"0.22,0.42,0.68,0.28,Lead\n"
+"0.42,0.62,0.38,0.48,Pad\n"
+"0.32,0.52,0.78,0.38,Pad\n"
+"0.18,0.28,0.68,0.22,Lead\n"
+"0.28,0.48,0.88,0.32,Lead\n"
+"0.48,0.68,0.48,0.52,Pad\n"
+"0.38,0.58,0.78,0.42,Pad\n"
+"0.13,0.33,0.63,0.23,Lead\n"
+"0.23,0.43,0.73,0.33,Lead\n"
+"0.43,0.63,0.43,0.53,Pad\n"
+"0.33,0.53,0.73,0.43,Pad\n"
+"0.17,0.27,0.67,0.21,Lead\n"
+"0.27,0.47,0.77,0.31,Lead\n"
+"0.47,0.67,0.47,0.57,Pad\n"
+"0.37,0.57,0.77,0.47,Pad\n"
+"0.14,0.34,0.64,0.24,Lead\n"
+"0.24,0.44,0.74,0.34,Lead\n"
+"0.44,0.64,0.44,0.54,Pad\n"
+"0.34,0.54,0.74,0.44,Pad\n"
+"0.19,0.29,0.69,0.22,Lead\n"
+"0.29,0.49,0.89,0.32,Lead\n"
+"0.49,0.69,0.49,0.59,Pad\n"
+"0.39,0.59,0.79,0.49,Pad\n"
+"0.16,0.36,0.66,0.26,Lead\n"
+"0.26,0.46,0.76,0.36,Lead\n"
+"0.46,0.66,0.46,0.56,Pad\n"
+"0.36,0.56,0.76,0.46,Pad\n"
+"0.14,0.34,0.64,0.24,Lead\n"
+"0.24,0.44,0.74,0.34,Lead\n"
+"0.44,0.64,0.44,0.54,Pad\n"
+"0.34,0.54,0.74,0.44,Pad\n"
+"0.15,0.35,0.65,0.25,Lead\n"
+"0.25,0.45,0.75,0.35,Lead\n"
+"0.45,0.65,0.45,0.55,Pad\n"
+"0.35,0.55,0.75,0.45,Pad\n"
+"0.12,0.32,0.62,0.22,Lead\n"
+"0.22,0.42,0.82,0.32,Lead\n"
+"0.42,0.62,0.42,0.62,Pad\n"
+"0.32,0.52,0.72,0.42,Pad\n"
+"0.16,0.36,0.66,0.26,Lead\n"
+"0.26,0.46,0.76,0.36,Lead\n"
+"0.46,0.66,0.46,0.66,Pad\n"
+"0.36,0.56,0.76,0.46,Pad\n"
+"0.13,0.33,0.63,0.23,Lead\n"
+"0.23,0.43,0.73,0.33,Lead\n"
+"0.43,0.63,0.43,0.63,Pad\n"
+"0.33,0.53,0.73,0.43,Pad\n"
+"0.17,0.37,0.67,0.27,Lead\n"
+"0.27,0.47,0.77,0.37,Lead\n"
+"0.47,0.67,0.47,0.67,Pad\n"
+"0.37,0.57,0.77,0.47,Pad\n"
+"0.14,0.34,0.64,0.24,Lead\n"
+"0.24,0.44,0.74,0.34,Lead\n"
+"0.44,0.64,0.44,0.54,Pad\n"
+"0.34,0.54,0.74,0.44,Pad\n"
+"0.19,0.29,0.69,0.29,Lead\n"
+"0.29,0.49,0.89,0.39,Lead\n"
+"0.49,0.69,0.49,0.69,Pad\n"
+"0.39,0.59,0.79,0.49,Pad\n"
+"0.15,0.35,0.65,0.25,Lead\n"
+"0.25,0.45,0.75,0.35,Lead\n"
+"0.45,0.65,0.45,0.55,Pad\n"
+"0.35,0.55,0.75,0.45,Pad\n"
+"0.12,0.32,0.62,0.22,Lead\n"
+"0.22,0.42,0.82,0.32,Lead\n"
+"0.42,0.62,0.42,0.62,Pad\n"
+"0.32,0.52,0.72,0.42,Pad\n"
+"0.16,0.36,0.66,0.26,Lead\n"
+"0.26,0.46,0.76,0.36,Lead\n"
+"0.46,0.66,0.46,0.66,Pad\n"
+"0.36,0.56,0.76,0.46,Pad\n"
+"0.13,0.33,0.63,0.23,Lead\n"
+"0.23,0.43,0.73,0.33,Lead\n"
+"0.43,0.63,0.43,0.63,Pad\n"
+"0.33,0.53,0.73,0.43,Pad\n";
+
+const char* Prelim_ADSR_CSV_txt = (const char*) temp_binary_data_2;
+
 
 const char* getNamedResource (const char* resourceNameUTF8, int& numBytes);
 const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
@@ -835,6 +925,7 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
     {
         case 0x2292a630:  numBytes = 56728; return caffe_proto;
         case 0x1a9770ab:  numBytes = 25; return CPPLINT_cfg;
+        case 0x7dc234ec:  numBytes = 2075; return Prelim_ADSR_CSV_txt;
         default: break;
     }
 
@@ -845,13 +936,15 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
 const char* namedResourceList[] =
 {
     "caffe_proto",
-    "CPPLINT_cfg"
+    "CPPLINT_cfg",
+    "Prelim_ADSR_CSV_txt"
 };
 
 const char* originalFilenames[] =
 {
     "caffe.proto",
-    "CPPLINT.cfg"
+    "CPPLINT.cfg",
+    "Prelim_ADSR_CSV.txt"
 };
 
 const char* getNamedResourceOriginalFilename (const char* resourceNameUTF8);

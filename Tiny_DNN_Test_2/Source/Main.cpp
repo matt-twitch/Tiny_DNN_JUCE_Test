@@ -21,21 +21,12 @@ void construct_rnn() {
     const size_t numFeatures = 4;
     
     // load training data
-    std::vector<tiny_dnn::label_t> t_labels;
-    std::vector<tiny_dnn::vec_t> t_data;
+    std::vector<tiny_dnn::tensor_t> t_labels;
+    std::vector<tiny_dnn::tensor_t> t_data;
 
     const int num_features = 4; // Number of input features, equivalent to sequence length
     const int num_vals = 10; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
-    // TO DO: FIND HIDDEN SIZE AND DOUBLE CHECK SEQUENCE LENGTH
-    
-    /*
-     ARCHITECTURE
-     input layer
-     LSTM layer
-     dense
-     output layer
-     */
     
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
@@ -51,6 +42,11 @@ void construct_rnn() {
     nn << tiny_dnn::layers::fc(hidden_size, num_vals, false, backend_type);
     nn << tiny_dnn::activation::softmax();
     
+    
+}
+
+void format_rnn_data(std::vector<tiny_dnn::tensor_t>& labels, std::vector<tiny_dnn::tensor_t>& values)
+{
     
 }
 

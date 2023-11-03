@@ -16,8 +16,6 @@
 
 void construct_rnn() {
     
-    tiny_dnn::network<tiny_dnn::sequential> net;
-    
     // training data (84 x 4)
     const size_t numSamples = 84;
     const size_t numFeatures = 4;
@@ -25,18 +23,34 @@ void construct_rnn() {
     // load training data
     std::vector<tiny_dnn::label_t> t_labels;
     std::vector<tiny_dnn::vec_t> t_data;
+
+    const int num_features = 4; // Number of input features, equivalent to sequence length
+    const int num_vals = 10; // Number of possible values, equivalent to vocab size
+    const int hidden_size = 128; // size of hidden layers
+    // TO DO: FIND HIDDEN SIZE AND DOUBLE CHECK SEQUENCE LENGTH
     
-    tiny_dnn::network<tiny_dnn::sequential> RegNet;
-
-    const size_t num_features = 4; // Number of input features
-    const size_t num_adsr_parameters = 4; // Number of ADSR parameters
-    const size_t num_classes = 2; // Number of classes (lead or pad)
-
-    RegNet << tiny_dnn::layers::fc(num_features, 64) << tiny_dnn::activation::relu()
-        << tiny_dnn::layers::fc(64, 64) << tiny_dnn::activation::relu()
-        << tiny_dnn::layers::fc(64, num_adsr_parameters)
-        << tiny_dnn::layers::linear(4)
-        << tiny_dnn::layers::softmax_layer();
+    /*
+     ARCHITECTURE
+     input layer
+     LSTM layer
+     dense
+     output layer
+     */
+    
+    tiny_dnn::network<tiny_dnn::sequential> nn;
+    tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
+    
+    tiny_dnn::recurrent_layer_parameters params;
+    params.clip = 0;
+    
+    int input_size = num_features;
+    
+    nn << tiny_dnn::layers::fc(num_vals, input_size, false, backend_type);
+    nn << tiny_dnn::recurrent_layer(tiny_dnn::lstm(input_size, hidden_size), num_features, params);
+    nn << tiny_dnn::activation::relu();
+    nn << tiny_dnn::layers::fc(hidden_size, num_vals, false, backend_type);
+    nn << tiny_dnn::activation::softmax();
+    
     
 }
 
@@ -62,44 +76,13 @@ void construct_cnn() {
     
     tiny_dnn::adam opt;
     
-    
-/*
-    // add layers
-    net << conv(32, 32, 5, 1, 6) << tiny_dnn::activation::tanh()  // in:32x32x1, 5x5conv, 6fmaps
-    << ave_pool(28, 28, 6, 2) << tiny_dnn::activation::tanh() // in:28x28x6, 2x2pooling
-    << fc(14 * 14 * 6, 120) << tiny_dnn::activation::tanh()   // in:14x14x6, out:120
-        << fc(120, 10);                     // in:120,     out:10
-
-    assert(net.in_data_size() == 32 * 32);
-    assert(net.out_data_size() == 10);
-
-    // load MNIST dataset
-    std::vector<label_t> train_labels;
-    std::vector<vec_t> train_images;
-
-    parse_mnist_labels("train-labels.idx1-ubyte", &train_labels);
-    parse_mnist_images("train-images.idx3-ubyte", &train_images, -1.0, 1.0, 2, 2);
-
-    // declare optimization algorithm
-    adagrad optimizer;
-
-    // train (50-epoch, 30-minibatch)
-    net.train<mse, adagrad>(optimizer, train_images, train_labels, 30, 50);
-
-    // save
-    net.save("net");
-
-    // load
-    // network<sequential> net2;
-    // net2.load("net");
- */
 }
 
 
 int main (int argc, char* argv[])
 {
 
-    construct_cnn();
+    construct_rnn();
 
 
     return 0;

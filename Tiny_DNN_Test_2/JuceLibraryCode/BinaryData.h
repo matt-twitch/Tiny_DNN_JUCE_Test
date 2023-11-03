@@ -14,11 +14,14 @@ namespace BinaryData
     extern const char*   CPPLINT_cfg;
     const int            CPPLINT_cfgSize = 25;
 
+    extern const char*   ADSR_Int_Encoded_csv;
+    const int            ADSR_Int_Encoded_csvSize = 781;
+
     extern const char*   Prelim_ADSR_CSV_txt;
     const int            Prelim_ADSR_CSV_txtSize = 2075;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 3;
+    const int namedResourceListSize = 4;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

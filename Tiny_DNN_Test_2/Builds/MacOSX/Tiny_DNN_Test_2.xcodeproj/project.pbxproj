@@ -177,6 +177,7 @@
 		C55CE6678CF0836FDBB9CBA7 /* avx_deconv2d_kernel.h */ /* avx_deconv2d_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = avx_deconv2d_kernel.h; path = ../../Source/tiny_dnn/core/kernels/avx_deconv2d_kernel.h; sourceTree = SOURCE_ROOT; };
 		C820767B38C06341D42C8DE9 /* deform.h */ /* deform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = deform.h; path = ../../Source/tiny_dnn/util/deform.h; sourceTree = SOURCE_ROOT; };
 		C9492979DDD59B82F63462D8 /* xindexview.hpp */ /* xindexview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xindexview.hpp; path = ../../Source/tiny_dnn/xtensor/xindexview.hpp; sourceTree = SOURCE_ROOT; };
+		CB1D45AEBC38B7B643A9FDCE /* ADSR_Int_Encoded.csv */ /* ADSR_Int_Encoded.csv */ = {isa = PBXFileReference; lastKnownFileType = file.csv; name = ADSR_Int_Encoded.csv; path = "../../Training data/ADSR_Int_Encoded.csv"; sourceTree = SOURCE_ROOT; };
 		CC634C7B555BC4540E4D027B /* quantized_convolutional_layer.h */ /* quantized_convolutional_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = quantized_convolutional_layer.h; path = ../../Source/tiny_dnn/layers/quantized_convolutional_layer.h; sourceTree = SOURCE_ROOT; };
 		CD3A925AC8307477788209BB /* fully_connected_op.h */ /* fully_connected_op.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fully_connected_op.h; path = ../../Source/tiny_dnn/core/kernels/fully_connected_op.h; sourceTree = SOURCE_ROOT; };
 		CE2A06900B86B0EA87FDE9E8 /* backend_avx.h */ /* backend_avx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = backend_avx.h; path = ../../Source/tiny_dnn/core/backend_avx.h; sourceTree = SOURCE_ROOT; };
@@ -448,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				677FEEF308198AFB6AA14404,
+				CB1D45AEBC38B7B643A9FDCE,
 				B9B004A1DC003CEE08C32A4B,
 			);
 			name = Tiny_DNN_Test_2;

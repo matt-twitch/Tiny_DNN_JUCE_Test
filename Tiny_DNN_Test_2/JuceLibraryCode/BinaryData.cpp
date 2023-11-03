@@ -821,8 +821,142 @@ static const unsigned char temp_binary_data_1[] =
 
 const char* CPPLINT_cfg = (const char*) temp_binary_data_1;
 
-//================== Prelim_ADSR_CSV.txt ==================
+//================== ADSR_Int_Encoded.csv ==================
 static const unsigned char temp_binary_data_2[] =
+"value, label\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.7\n"
+"3,0.4\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.8\n"
+"3,0.5\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.7\n"
+"3,0.4\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.7\n"
+"3,0.4\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.8\n"
+"3,0.5\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.7\n"
+"3,0.4\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.7\n"
+"3,0.4\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n"
+"0,0.2\n"
+"1,0.4\n"
+"2,0.6\n"
+"3,0.3\n"
+"0,0.1\n"
+"1,0.3\n"
+"2,0.7\n"
+"3,0.4\n"
+"0,0.3\n"
+"1,0.2\n"
+"2,0.5\n"
+"3,0.2\n"
+"0,0.4\n"
+"1,0.5\n"
+"2,0.4\n"
+"3,0.1\n";
+
+const char* ADSR_Int_Encoded_csv = (const char*) temp_binary_data_2;
+
+//================== Prelim_ADSR_CSV.txt ==================
+static const unsigned char temp_binary_data_3[] =
 "Attack,Decay,Sustain,Release,Sound Type\n"
 "0.1,0.3,0.5,0.2,Lead\n"
 "0.2,0.4,0.6,0.3,Lead\n"
@@ -909,7 +1043,7 @@ static const unsigned char temp_binary_data_2[] =
 "0.43,0.63,0.43,0.63,Pad\n"
 "0.33,0.53,0.73,0.43,Pad\n";
 
-const char* Prelim_ADSR_CSV_txt = (const char*) temp_binary_data_2;
+const char* Prelim_ADSR_CSV_txt = (const char*) temp_binary_data_3;
 
 
 const char* getNamedResource (const char* resourceNameUTF8, int& numBytes);
@@ -925,6 +1059,7 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
     {
         case 0x2292a630:  numBytes = 56728; return caffe_proto;
         case 0x1a9770ab:  numBytes = 25; return CPPLINT_cfg;
+        case 0x299c0e48:  numBytes = 781; return ADSR_Int_Encoded_csv;
         case 0x7dc234ec:  numBytes = 2075; return Prelim_ADSR_CSV_txt;
         default: break;
     }
@@ -937,6 +1072,7 @@ const char* namedResourceList[] =
 {
     "caffe_proto",
     "CPPLINT_cfg",
+    "ADSR_Int_Encoded_csv",
     "Prelim_ADSR_CSV_txt"
 };
 
@@ -944,6 +1080,7 @@ const char* originalFilenames[] =
 {
     "caffe.proto",
     "CPPLINT.cfg",
+    "ADSR_Int_Encoded.csv",
     "Prelim_ADSR_CSV.txt"
 };
 

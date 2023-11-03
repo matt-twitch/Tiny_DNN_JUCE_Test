@@ -20,11 +20,9 @@ void construct_rnn() {
     const size_t numSamples = 84;
     const size_t numFeatures = 4;
     
-    // load training data
-    std::vector<tiny_dnn::tensor_t> t_labels;
-    std::vector<tiny_dnn::tensor_t> t_data;
-    
-    rapidcsv::Document doc ("")
+    rapidcsv::Document data ("../ADSR_Int_Encoded.csv");
+    std::vector<float> t_labels  = data.GetColumn<float>("label");
+    std::vector<int> t_values = data.GetColumn<int>("value");
     
     const int num_features = 4; // Number of input features, equivalent to sequence length
     const int num_vals = 10; // Number of possible values, equivalent to vocab size

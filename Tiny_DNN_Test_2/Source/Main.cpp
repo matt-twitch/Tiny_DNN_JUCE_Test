@@ -115,14 +115,20 @@ void construct_rnn()
     
     tiny_dnn::adam opt;
     size_t batch_size = 400;
-    int epochs = 30;
+    int epochs = 50;
+    
+    DBG("start training...");
     
     nn.train<tiny_dnn::cross_entropy_multiclass>(opt, values, labels, batch_size, epochs);
     
-    tiny_dnn::vec_t input = generatePad();
+    DBG("training ended");
+    
+    tiny_dnn::vec_t input = generateLead();
     tiny_dnn::label_t result = nn.predict_label(input);
     
     DBG("label = " << result);
+    
+    nn.test(test_values, test_labels).print_detail(std::cout);
     
     /*
     for(int i = 0 ; i < result.size() ; i++)

@@ -21,6 +21,12 @@ void construct_rnn()
     const int num_vals = 10; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
     
+    std::vector<tiny_dnn::vec_t> values = {{0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3},
+                                            {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3},
+                                            {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3},
+                                            {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}};
+    std::vector<tiny_dnn::label_t> labels;
+    
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
     

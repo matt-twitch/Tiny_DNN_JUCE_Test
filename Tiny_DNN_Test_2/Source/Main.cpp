@@ -65,7 +65,9 @@ void construct_rnn()
     const int num_vals = 4; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
     const int sample_size = 200;
+    const int test_size = 100;
     
+    // training data
     std::vector<tiny_dnn::vec_t> values;
     for(int i = 0 ; i < sample_size ; i++)
         values.push_back(generatePad());
@@ -80,6 +82,22 @@ void construct_rnn()
     
     for(int i = 0 ; i < sample_size ; i++)
         labels.push_back(1);
+    
+    // test data
+    std::vector<tiny_dnn::vec_t> test_values;
+    for(int i = 0 ; i < test_size ; i++)
+        test_values.push_back(generatePad());
+    
+    for(int i = 0 ; i < test_size ; i++)
+        test_values.push_back(generateLead());
+    
+    // 0 = pad, 1 = lead
+    std::vector<tiny_dnn::label_t> test_labels;
+    for(int i = 0 ; i < test_size ; i++)
+        test_labels.push_back(0);
+    
+    for(int i = 0 ; i < test_size ; i++)
+        test_labels.push_back(1);
     
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
@@ -96,16 +114,20 @@ void construct_rnn()
     nn << tiny_dnn::activation::softmax();
     
     tiny_dnn::adam opt;
-    size_t batch_size = 1;
+    size_t batch_size = 400;
     int epochs = 30;
     
-    nn.train<tiny_dnn::mse>(opt, values, labels, batch_size, epochs);
+    nn.train<tiny_dnn::cross_entropy_multiclass>(opt, values, labels, batch_size, epochs);
     
-    tiny_dnn::vec_t input {0.2, 0.4, 0.6, 0.3};
-    tiny_dnn::vec_t result = nn.predict(input);
+    tiny_dnn::vec_t input = generatePad();
+    tiny_dnn::label_t result = nn.predict_label(input);
     
+    DBG("label = " << result);
+    
+    /*
     for(int i = 0 ; i < result.size() ; i++)
         DBG("result " << i << " = " << result[i]);
+     */
     
 }
 

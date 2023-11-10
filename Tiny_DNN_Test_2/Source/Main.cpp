@@ -19,7 +19,7 @@ float roundFloat(float toRound)
     return (float)val / 100;
 }
 
-std::vector<float> generatePad()
+tiny_dnn::vec_t generatePad()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -34,12 +34,12 @@ std::vector<float> generatePad()
     float sustain = roundFloat(sus(gen));
     float release = roundFloat(rel(gen));
     
-    std::vector<float> pad {attack, decay, sustain, release};
+    tiny_dnn::vec_t pad {attack, decay, sustain, release};
     
     return pad;
 }
 
-std::vector<float> generateLead()
+tiny_dnn::vec_t generateLead()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -54,7 +54,7 @@ std::vector<float> generateLead()
     float sustain = roundFloat(sus(gen));
     float release = roundFloat(rel(gen));
     
-    std::vector<float> lead {attack, decay, sustain, release};
+    tiny_dnn::vec_t lead {attack, decay, sustain, release};
     
     return lead;
 }
@@ -64,18 +64,22 @@ void construct_rnn()
     const int num_features = 4; // Number of input features, equivalent to sequence length
     const int num_vals = 4; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
+    const int sample_size = 200;
     
-    std::vector<tiny_dnn::vec_t> values {{0.2, 0.4, 0.6, 0.3}, {0.1, 0.3, 0.7, 0.4}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.1}, {0.1, 0.3, 0.8, 0.5},
-                                         {0.2, 0.4, 0.6, 0.3}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.7}, {0.4, 0.5, 0.1, 0.8}, {0.2, 0.4, 0.6, 0.7},
-                                         {0.2, 0.4, 0.6, 0.3}, {0.1, 0.3, 0.7, 0.4}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.1}, {0.1, 0.3, 0.8, 0.5},
-                                         {0.2, 0.4, 0.6, 0.3}, {0.1, 0.3, 0.7, 0.4}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.1}, {0.1, 0.3, 0.8, 0.5},
-                                         {0.2, 0.4, 0.6, 0.3}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.7}, {0.4, 0.5, 0.1, 0.8}, {0.2, 0.4, 0.6, 0.7}};
+    std::vector<tiny_dnn::vec_t> values;
+    for(int i = 0 ; i < sample_size ; i++)
+        values.push_back(generatePad());
     
-    std::vector<tiny_dnn::label_t> labels {0, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0};
+    for(int i = 0 ; i < sample_size ; i++)
+        values.push_back(generateLead());
+    
+    // 0 = pad, 1 = lead
+    std::vector<tiny_dnn::label_t> labels;
+    for(int i = 0 ; i < sample_size ; i++)
+        labels.push_back(0);
+    
+    for(int i = 0 ; i < sample_size ; i++)
+        labels.push_back(1);
     
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
@@ -97,10 +101,10 @@ void construct_rnn()
     
     nn.train<tiny_dnn::mse>(opt, values, labels, batch_size, epochs);
     
-    tiny_dnn::vec_t input {2, 4, 6, 3};
+    tiny_dnn::vec_t input {0.2, 0.4, 0.6, 0.3};
     tiny_dnn::vec_t result = nn.predict(input);
     
-    for(int i = 0 ; i< result.size() ; i++)
+    for(int i = 0 ; i < result.size() ; i++)
         DBG("result " << i << " = " << result[i]);
     
 }
@@ -133,19 +137,7 @@ void construct_cnn() {
 int main (int argc, char* argv[])
 {
 
-    //construct_rnn();
-
-    std::vector<float> pad = generatePad();
-    std::vector<float> lead = generateLead();
-    
-    DBG("pad = ");
-    for(int i = 0 ; i < pad.size() ; i++)
-        DBG("pad param " << i << " = " << pad[i]);
-    
-    DBG("lead = ");
-    for(int i = 0 ; i < lead.size() ; i++)
-        DBG("lead param " << i << " = " << lead[i]);
-    
+    construct_rnn();
 
     return 0;
 }

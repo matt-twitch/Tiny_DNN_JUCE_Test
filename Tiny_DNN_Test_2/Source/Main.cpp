@@ -18,13 +18,13 @@ void construct_rnn()
 {
 
     const int num_features = 4; // Number of input features, equivalent to sequence length
-    const int num_vals = 80; // Number of possible values, equivalent to vocab size
+    const int num_vals = 4; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
     
-    std::vector<tiny_dnn::vec_t> values    {{0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3},
-                                            {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3},
-                                            {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3},
-                                            {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}, {0}, {1}, {2}, {3}};
+    std::vector<tiny_dnn::vec_t> values    {{0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3},
+                                            {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3},
+                                            {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3},
+                                            {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}};
     std::vector<tiny_dnn::label_t> labels  {2, 4, 6, 3, 1, 3, 7, 4, 3, 2, 5, 2, 4, 5, 4, 1, 1, 3, 8, 5,
                                             2, 4, 6, 3, 3, 2, 5, 2, 4, 5, 4, 7, 4, 5, 1, 8, 2, 4, 6, 7,
                                             2, 4, 6, 3, 1, 3, 7, 4, 3, 2, 5, 2, 4, 5, 4, 1, 1, 3, 8, 5,
@@ -36,7 +36,7 @@ void construct_rnn()
     tiny_dnn::recurrent_layer_parameters params;
     params.clip = 0;
     
-    int input_size = num_features;
+    int input_size = num_vals;
     
     nn << tiny_dnn::layers::fc(num_vals, input_size, false, backend_type);
     nn << tiny_dnn::recurrent_layer(tiny_dnn::lstm(input_size, hidden_size), num_features, params);

@@ -12,22 +12,27 @@
 
 //==============================================================================
 
-//std::vector<tiny_dnn::label_t> parse_Labels
+
+float roundFloat(float toRound)
+{
+    float val = (int)(toRound * 100 + .5);
+    return (float)val / 100;
+}
 
 std::vector<float> generatePad()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
     
-    std::uniform_int_distribution<> att(0.1, 0.3);
-    std::uniform_int_distribution<> dec(0.2, 0.5);
-    std::uniform_int_distribution<> sus(0.1, 0.3);
-    std::uniform_int_distribution<> rel(0.1, 0.3);
+    std::uniform_real_distribution<> att(0.3, 0.9);
+    std::uniform_real_distribution<> dec(0.3, 0.8);
+    std::uniform_real_distribution<> sus(0.4, 0.7);
+    std::uniform_real_distribution<> rel(0.6, 0.9);
     
-    float attack = att(gen);
-    float decay = dec(gen);
-    float sustain = sus(gen);
-    float release = rel(gen);
+    float attack = roundFloat(att(gen));
+    float decay = roundFloat(dec(gen));
+    float sustain = roundFloat(sus(gen));
+    float release = roundFloat(rel(gen));
     
     std::vector<float> pad {attack, decay, sustain, release};
     
@@ -39,15 +44,15 @@ std::vector<float> generateLead()
     std::random_device rd;
     std::mt19937 gen(rd());
     
-    std::uniform_int_distribution<> att(0.3, 0.9);
-    std::uniform_int_distribution<> dec(0.3, 0.8);
-    std::uniform_int_distribution<> sus(0.4, 0.7);
-    std::uniform_int_distribution<> rel(0.6, 0.9);
+    std::uniform_real_distribution<> att(0.1, 0.3);
+    std::uniform_real_distribution<> dec(0.2, 0.5);
+    std::uniform_real_distribution<> sus(0.1, 0.3);
+    std::uniform_real_distribution<> rel(0.1, 0.3);
     
-    float attack = att(gen);
-    float decay = dec(gen);
-    float sustain = sus(gen);
-    float release = rel(gen);
+    float attack = roundFloat(att(gen));
+    float decay = roundFloat(dec(gen));
+    float sustain = roundFloat(sus(gen));
+    float release = roundFloat(rel(gen));
     
     std::vector<float> lead {attack, decay, sustain, release};
     
@@ -55,21 +60,10 @@ std::vector<float> generateLead()
 }
 
 void construct_rnn()
-{    
+{
     const int num_features = 4; // Number of input features, equivalent to sequence length
     const int num_vals = 4; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
-    
-    /*
-    std::vector<tiny_dnn::vec_t> values    {{0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3},
-                                            {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3},
-                                            {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3},
-                                            {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}};
-    std::vector<tiny_dnn::label_t> labels  {{2, 4, 6, 3}, {1, 3, 7, 4}, {3, 2, 5, 2}, {4, 5, 4, 1}, {1, 3, 8, 5},
-                                            {2, 4, 6, 3}, {3, 2, 5, 2}, {4, 5, 4, 7}, {4, 5, 1, 8}, {2, 4, 6, 7},
-                                            {2, 4, 6, 3}, {1, 3, 7, 4}, {3, 2, 5, 2}, {4, 5, 4, 1}, {1, 3, 8, 5},
-                                            {2, 4, 6, 3}, {3, 2, 5, 2}, {4, 5, 4, 7}, {4, 5, 1, 8}, {2, 4, 6, 7}};
-    */
     
     std::vector<tiny_dnn::vec_t> values {{0.2, 0.4, 0.6, 0.3}, {0.1, 0.3, 0.7, 0.4}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.1}, {0.1, 0.3, 0.8, 0.5},
                                          {0.2, 0.4, 0.6, 0.3}, {0.3, 0.2, 0.5, 0.2}, {0.4, 0.5, 0.4, 0.7}, {0.4, 0.5, 0.1, 0.8}, {0.2, 0.4, 0.6, 0.7},
@@ -111,11 +105,6 @@ void construct_rnn()
     
 }
 
-void format_rnn_data(std::vector<tiny_dnn::tensor_t>& labels, std::vector<tiny_dnn::tensor_t>& values)
-{
-    
-}
-
 void construct_cnn() {
     
     tiny_dnn::network<tiny_dnn::sequential> net;
@@ -144,8 +133,19 @@ void construct_cnn() {
 int main (int argc, char* argv[])
 {
 
-    construct_rnn();
+    //construct_rnn();
 
+    std::vector<float> pad = generatePad();
+    std::vector<float> lead = generateLead();
+    
+    DBG("pad = ");
+    for(int i = 0 ; i < pad.size() ; i++)
+        DBG("pad param " << i << " = " << pad[i]);
+    
+    DBG("lead = ");
+    for(int i = 0 ; i < lead.size() ; i++)
+        DBG("lead param " << i << " = " << lead[i]);
+    
 
     return 0;
 }

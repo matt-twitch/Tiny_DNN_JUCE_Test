@@ -82,6 +82,7 @@
 		54F609D0EBE70928411A939D /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
 		561F61126645259FEB878791 /* serialization_helper.h */ /* serialization_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = serialization_helper.h; path = ../../Source/tiny_dnn/util/serialization_helper.h; sourceTree = SOURCE_ROOT; };
 		562E057257D25BBBE3BF19D0 /* softplus_layer.h */ /* softplus_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = softplus_layer.h; path = ../../Source/tiny_dnn/activations/softplus_layer.h; sourceTree = SOURCE_ROOT; };
+		570FBC0E5053CCAE76556CE1 /* csv.h */ /* csv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = csv.h; path = ../../Source/csv.h; sourceTree = SOURCE_ROOT; };
 		59DC549DF8B2759282F33E22 /* tanh_p1m2_layer.h */ /* tanh_p1m2_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tanh_p1m2_layer.h; path = ../../Source/tiny_dnn/activations/tanh_p1m2_layer.h; sourceTree = SOURCE_ROOT; };
 		5A6E2C3595E6890A79D28C8A /* caffe.proto */ /* caffe.proto */ = {isa = PBXFileReference; lastKnownFileType = file.proto; name = caffe.proto; path = ../../Source/tiny_dnn/io/caffe/caffe.proto; sourceTree = SOURCE_ROOT; };
 		5C6789EC46F4A07830243FD3 /* gru_cell_op_internal.h */ /* gru_cell_op_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gru_cell_op_internal.h; path = ../../Source/tiny_dnn/core/kernels/gru_cell_op_internal.h; sourceTree = SOURCE_ROOT; };
@@ -150,7 +151,6 @@
 		A5C11CFF5DB6A43B858D6DEE /* gradient_check.h */ /* gradient_check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gradient_check.h; path = ../../Source/tiny_dnn/util/gradient_check.h; sourceTree = SOURCE_ROOT; };
 		A64569A327445622826453DC /* tiny_quantized_fully_connected_kernel.h */ /* tiny_quantized_fully_connected_kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tiny_quantized_fully_connected_kernel.h; path = ../../Source/tiny_dnn/core/kernels/tiny_quantized_fully_connected_kernel.h; sourceTree = SOURCE_ROOT; };
 		A6D1633133A05A1A2331F277 /* xexpression.hpp */ /* xexpression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xexpression.hpp; path = ../../Source/tiny_dnn/xtensor/xexpression.hpp; sourceTree = SOURCE_ROOT; };
-		A72FBF7DF6ADBE73F17005C1 /* rapidcsv.h */ /* rapidcsv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rapidcsv.h; path = ../../Source/rapidcsv.h; sourceTree = SOURCE_ROOT; };
 		A8E4B9796ACEAD8AF75517E6 /* config.h */ /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../Source/tiny_dnn/config.h; sourceTree = SOURCE_ROOT; };
 		A94904E1F68E3FCD049B5BB1 /* xtensor_config.hpp */ /* xtensor_config.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xtensor_config.hpp; path = ../../Source/tiny_dnn/xtensor/xtensor_config.hpp; sourceTree = SOURCE_ROOT; };
 		ABC1E1D8C1FE92F4EC2852DA /* colored_print.h */ /* colored_print.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = colored_print.h; path = ../../Source/tiny_dnn/util/colored_print.h; sourceTree = SOURCE_ROOT; };
@@ -499,8 +499,8 @@
 		677FEEF308198AFB6AA14404 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A72FBF7DF6ADBE73F17005C1,
 				6604D828E588FFDF10CB3A99,
+				570FBC0E5053CCAE76556CE1,
 				DF5F2DB168C24FAA3AEACD96,
 			);
 			name = Source;

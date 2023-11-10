@@ -8,22 +8,15 @@
 
 #include <JuceHeader.h>
 #include <tiny_dnn.h>
-#include "rapidcsv.h"
+#include "csv.h"
 
 //==============================================================================
 
 //std::vector<tiny_dnn::label_t> parse_Labels
 
-void construct_rnn() {
-    
-    // training data (84 x 4)
-    const size_t numSamples = 84;
-    const size_t numFeatures = 4;
-    
-    rapidcsv::Document data ("../ADSR_Int_Encoded.csv");
-    std::vector<float> t_labels  = data.GetColumn<float>("label");
-    std::vector<int> t_values = data.GetColumn<int>("value");
-    
+void construct_rnn()
+{
+
     const int num_features = 4; // Number of input features, equivalent to sequence length
     const int num_vals = 10; // Number of possible values, equivalent to vocab size
     const int hidden_size = 128; // size of hidden layers
@@ -41,6 +34,8 @@ void construct_rnn() {
     nn << tiny_dnn::activation::relu();
     nn << tiny_dnn::layers::fc(hidden_size, num_vals, false, backend_type);
     nn << tiny_dnn::activation::softmax();
+    
+    tiny_dnn::adam opt;
     
     
 }

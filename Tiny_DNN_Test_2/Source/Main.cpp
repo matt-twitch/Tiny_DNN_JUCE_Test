@@ -142,22 +142,21 @@ void construct_adsr_rnn()
     
     DBG("training ended");
     
-    tiny_dnn::vec_t input {0, 1, 0, 0};
+    tiny_dnn::vec_t input {1, 0, 0, 0};
     tiny_dnn::vec_t result = nn.predict(input);
     
     for(int i = 0 ; i < result.size() ; i++)
         DBG("result = " << result[i]);
     
-    //nn.test(test_values, test_labels).print_detail(std::cout);
-    
-    /*
-    for(int i = 0 ; i < result.size() ; i++)
-        DBG("result " << i << " = " << result[i]);
-     */
+}
+
+void construct_filter_nn()
+{
     
 }
 
-void construct_cnn() {
+void construct_cnn()
+{
     
     tiny_dnn::network<tiny_dnn::sequential> net;
     

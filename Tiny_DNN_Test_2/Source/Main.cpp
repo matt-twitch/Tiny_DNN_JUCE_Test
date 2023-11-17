@@ -19,7 +19,7 @@ float roundFloat(float toRound)
     return (float)val / 100;
 }
 
-tiny_dnn::vec_t generatePad()
+tiny_dnn::tensor_t generatePad() // generates one sequence of type pad
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -34,12 +34,13 @@ tiny_dnn::vec_t generatePad()
     float sustain = roundFloat(sus(gen));
     float release = roundFloat(rel(gen));
     
-    tiny_dnn::vec_t pad {attack, decay, sustain, release};
+    tiny_dnn::vec_t seq {attack, decay, sustain, release};
+    tiny_dnn::tensor_t pad {seq};
     
     return pad;
 }
 
-tiny_dnn::vec_t generateLead()
+tiny_dnn::tensor_t generateLead() // generates one sequence of type lead
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -54,52 +55,54 @@ tiny_dnn::vec_t generateLead()
     float sustain = roundFloat(sus(gen));
     float release = roundFloat(rel(gen));
     
-    tiny_dnn::vec_t lead {attack, decay, sustain, release};
+    tiny_dnn::vec_t seq {attack, decay, sustain, release};
+    tiny_dnn::tensor_t lead {seq};
     
     return lead;
 }
 
-void construct_rnn()
+void construct_adsr_rnn()
 {
-    const int num_features = 4; // Number of input features, equivalent to sequence length
-    const int num_vals = 4; // Number of possible values, equivalent to vocab size
+    const int num_features = 1; // Number of input features, only predicting one feature, the envelope value
+    const int num_vals = 400; // Number of input values, equivalent to vocab size
+    const int seq_length = 4;
     const int hidden_size = 128; // size of hidden layers
-    const int sample_size = 200;
+    const int sample_size = 200; // * 2 = number of time steps
     const int test_size = 100;
     
-    
+    tiny_dnn::tensor_t tensor;
     
     // training data
-    std::vector<tiny_dnn::vec_t> values;
+    std::vector<tiny_dnn::tensor_t> adsr_params;
     for(int i = 0 ; i < sample_size ; i++)
-        values.push_back(generatePad());
+        adsr_params.push_back(generatePad());
     
     for(int i = 0 ; i < sample_size ; i++)
-        values.push_back(generateLead());
+        adsr_params.push_back(generateLead());
     
-    // 0 = pad, 1 = lead
-    std::vector<tiny_dnn::label_t> labels;
-    for(int i = 0 ; i < sample_size ; i++)
-        labels.push_back(0);
+    // (0, 1) = pad, (1, 0) = lead
+    std::vector<tiny_dnn::tensor_t> insts;
+    for(int i = 0 ; i < sample_size ; i++) // add pads
+        insts.push_back({0, 1});
     
-    for(int i = 0 ; i < sample_size ; i++)
-        labels.push_back(1);
+    for(int i = 0 ; i < sample_size ; i++) // add labels
+        insts.push_back({1, 0});
     
     // test data
-    std::vector<tiny_dnn::vec_t> test_values;
+    std::vector<tiny_dnn::vec_t> test_params;
     for(int i = 0 ; i < test_size ; i++)
-        test_values.push_back(generatePad());
+        test_params.push_back(generatePad());
     
     for(int i = 0 ; i < test_size ; i++)
-        test_values.push_back(generateLead());
+        test_params.push_back(generateLead());
     
     // 0 = pad, 1 = lead
-    std::vector<tiny_dnn::label_t> test_labels;
+    std::vector<tiny_dnn::vec_t> test_insts;
     for(int i = 0 ; i < test_size ; i++)
-        test_labels.push_back(0);
+        test_insts.push_back({0, 1});
     
     for(int i = 0 ; i < test_size ; i++)
-        test_labels.push_back(1);
+        test_insts.push_back({1, 0});
     
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
@@ -107,7 +110,7 @@ void construct_rnn()
     tiny_dnn::recurrent_layer_parameters params;
     params.clip = 0;
     
-    int input_size = num_vals;
+    int input_size = num_features * seq_length;
     
     nn << tiny_dnn::layers::fc(num_vals, input_size, false, backend_type);
     nn << tiny_dnn::recurrent_layer(tiny_dnn::lstm(input_size, hidden_size), num_features, params);
@@ -121,16 +124,16 @@ void construct_rnn()
     
     DBG("start training...");
     
-    nn.train<tiny_dnn::cross_entropy_multiclass>(opt, values, labels, batch_size, epochs);
+    nn.fit<tiny_dnn::cross_entropy_multiclass>(opt, insts, adsr_params, batch_size, epochs);
     
     DBG("training ended");
     
-    tiny_dnn::vec_t input = generateLead();
-    tiny_dnn::label_t result = nn.predict_label(input);
+    //tiny_dnn::vec_t input = generateLead();
+    //tiny_dnn::label_t result = nn.predict_label(input);
     
-    DBG("label = " << result);
+    //DBG("label = " << result);
     
-    nn.test(test_values, test_labels).print_detail(std::cout);
+    //nn.test(test_values, test_labels).print_detail(std::cout);
     
     /*
     for(int i = 0 ; i < result.size() ; i++)
@@ -167,7 +170,7 @@ void construct_cnn() {
 int main (int argc, char* argv[])
 {
 
-    construct_rnn();
+    construct_adsr_rnn();
 
     return 0;
 }

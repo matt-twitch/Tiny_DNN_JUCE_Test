@@ -142,10 +142,11 @@ void construct_adsr_rnn()
     
     DBG("training ended");
     
-    //tiny_dnn::vec_t input = generateLead();
-    //tiny_dnn::label_t result = nn.predict_label(input);
+    tiny_dnn::vec_t input {0, 1, 0, 0};
+    tiny_dnn::vec_t result = nn.predict(input);
     
-    //DBG("label = " << result);
+    for(int i = 0 ; i < result.size() ; i++)
+        DBG("result = " << result[i]);
     
     //nn.test(test_values, test_labels).print_detail(std::cout);
     

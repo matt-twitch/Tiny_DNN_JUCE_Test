@@ -63,15 +63,13 @@ tiny_dnn::tensor_t generateLead() // generates one sequence of type lead
 
 void construct_adsr_rnn()
 {
-    const int num_features = 1; // Number of input features, only predicting one feature, the envelope value
+    const int num_features = 4; // Number of input features, only predicting one feature, the envelope value
     const int num_vals = 400; // Number of input values, equivalent to vocab size
     const int seq_length = 4;
     const int hidden_size = 128; // size of hidden layers
     const int sample_size = 200; // * 2 = number of time steps
     const int test_size = 100;
-    
-    tiny_dnn::tensor_t tensor;
-    
+ 
     // training data
     std::vector<tiny_dnn::tensor_t> adsr_params;
     for(int i = 0 ; i < sample_size ; i++)
@@ -84,14 +82,14 @@ void construct_adsr_rnn()
     std::vector<tiny_dnn::tensor_t> insts;
     for(int i = 0 ; i < sample_size ; i++) // add pads
     {
-        tiny_dnn::vec_t insts_vec {0, 1};
+        tiny_dnn::vec_t insts_vec {0, 1, 0, 0};
         tiny_dnn::tensor_t insts_tens {insts_vec};
         insts.push_back(insts_tens);
     }
     
     for(int i = 0 ; i < sample_size ; i++) // add labels
     {
-        tiny_dnn::vec_t insts_vec {1, 0};
+        tiny_dnn::vec_t insts_vec {1, 0, 0, 0};
         tiny_dnn::tensor_t insts_tens {insts_vec};
         insts.push_back(insts_tens);
     }
@@ -108,16 +106,16 @@ void construct_adsr_rnn()
     std::vector<tiny_dnn::tensor_t> test_insts;
     for(int i = 0 ; i < test_size ; i++)
     {
-        tiny_dnn::vec_t insts_vec {0, 1};
+        tiny_dnn::vec_t insts_vec {0, 1, 0, 0};
         tiny_dnn::tensor_t insts_tens {insts_vec};
-        insts.push_back(insts_tens);
+        test_insts.push_back(insts_tens);
     }
     
     for(int i = 0 ; i < test_size ; i++)
     {
-        tiny_dnn::vec_t insts_vec {1, 0};
+        tiny_dnn::vec_t insts_vec {1, 0, 0, 0};
         tiny_dnn::tensor_t insts_tens {insts_vec};
-        insts.push_back(insts_tens);
+        test_insts.push_back(insts_tens);
     }
     
     tiny_dnn::network<tiny_dnn::sequential> nn;
@@ -126,12 +124,12 @@ void construct_adsr_rnn()
     tiny_dnn::recurrent_layer_parameters params;
     params.clip = 0;
     
-    int input_size = num_features * seq_length;
+    int input_size = 4;
     
-    nn << tiny_dnn::layers::fc(num_vals, input_size, false, backend_type);
-    nn << tiny_dnn::recurrent_layer(tiny_dnn::lstm(input_size, hidden_size), num_features, params);
+    nn << tiny_dnn::layers::fc(input_size, num_features, false, backend_type);
+    nn << tiny_dnn::recurrent_layer(tiny_dnn::lstm(num_features, hidden_size), num_features, params);
     nn << tiny_dnn::activation::relu();
-    nn << tiny_dnn::layers::fc(hidden_size, num_vals, false, backend_type);
+    nn << tiny_dnn::layers::fc(hidden_size, num_features, false, backend_type);
     nn << tiny_dnn::activation::softmax();
     
     tiny_dnn::adam opt;

@@ -83,13 +83,21 @@ void construct_adsr_rnn()
     // (0, 1) = pad, (1, 0) = lead
     std::vector<tiny_dnn::tensor_t> insts;
     for(int i = 0 ; i < sample_size ; i++) // add pads
-        insts.push_back({0, 1});
+    {
+        tiny_dnn::vec_t insts_vec {0, 1};
+        tiny_dnn::tensor_t insts_tens {insts_vec};
+        insts.push_back(insts_tens);
+    }
     
     for(int i = 0 ; i < sample_size ; i++) // add labels
-        insts.push_back({1, 0});
+    {
+        tiny_dnn::vec_t insts_vec {1, 0};
+        tiny_dnn::tensor_t insts_tens {insts_vec};
+        insts.push_back(insts_tens);
+    }
     
     // test data
-    std::vector<tiny_dnn::vec_t> test_params;
+    std::vector<tiny_dnn::tensor_t> test_params;
     for(int i = 0 ; i < test_size ; i++)
         test_params.push_back(generatePad());
     
@@ -97,12 +105,20 @@ void construct_adsr_rnn()
         test_params.push_back(generateLead());
     
     // 0 = pad, 1 = lead
-    std::vector<tiny_dnn::vec_t> test_insts;
+    std::vector<tiny_dnn::tensor_t> test_insts;
     for(int i = 0 ; i < test_size ; i++)
-        test_insts.push_back({0, 1});
+    {
+        tiny_dnn::vec_t insts_vec {0, 1};
+        tiny_dnn::tensor_t insts_tens {insts_vec};
+        insts.push_back(insts_tens);
+    }
     
     for(int i = 0 ; i < test_size ; i++)
-        test_insts.push_back({1, 0});
+    {
+        tiny_dnn::vec_t insts_vec {1, 0};
+        tiny_dnn::tensor_t insts_tens {insts_vec};
+        insts.push_back(insts_tens);
+    }
     
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();

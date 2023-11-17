@@ -67,6 +67,8 @@ void construct_rnn()
     const int sample_size = 200;
     const int test_size = 100;
     
+    
+    
     // training data
     std::vector<tiny_dnn::vec_t> values;
     for(int i = 0 ; i < sample_size ; i++)

@@ -15,7 +15,7 @@
 
 float roundFloat(float toRound)
 {
-    float val = (int)(toRound * 100 + .5);
+    float val = (int)(toRound * 100);
     return (float)val / 100;
 }
 
@@ -100,10 +100,8 @@ tiny_dnn::tensor_t generate_dark()
     std::random_device rd;
     std::mt19937 gen(rd());
     
-    std::uniform_int_distribution<> dark(0.1, 0.45);
-    
-    tiny_dnn::float_t cf = roundFloat(dark(gen));
-    tiny_dnn::tensor_t cf_t = {{cf}};
+    std::uniform_real_distribution<> dark(0.1, 0.45);
+    tiny_dnn::tensor_t cf_t = {{roundFloat(dark(gen))}};
     
     return cf_t;
 }
@@ -113,20 +111,20 @@ tiny_dnn::tensor_t generate_bright()
     std::random_device rd;
     std::mt19937 gen(rd());
     
-    std::uniform_int_distribution<> bright(0.5, 1.0);
-    
-    tiny_dnn::float_t cf = roundFloat(bright(gen));
-    tiny_dnn::tensor_t cf_t = {{cf}};
+    std::uniform_real_distribution<> bright(0.5, 1.0);
+    tiny_dnn::tensor_t cf_t = {{roundFloat(bright(gen))}};
     
     return cf_t;
 }
 
 void construct_cutoff_nn()
 {
+    using namespace tiny_dnn;
+    
     const int sample_size = 200;
     
     // generate training data
-    std::vector<tiny_dnn::tensor_t> cutoff_values;
+    std::vector<tensor_t> cutoff_values;
     for(int i = 0 ; i < sample_size ; i++)
         cutoff_values.push_back(generate_dark());
     
@@ -134,30 +132,30 @@ void construct_cutoff_nn()
         cutoff_values.push_back(generate_bright());
     
     // 0 - bright, 1 - dark
-    std::vector<tiny_dnn::tensor_t> input;
+    std::vector<tensor_t> input;
     for(int i = 0 ; i < sample_size ; i++) // add dark
     {
-        tiny_dnn::tensor_t t {{1, 0}};
+        tensor_t t {{1}};
         input.push_back(t);
     }
     
     for(int i = 0 ; i < sample_size ; i++) // add bright
     {
-        tiny_dnn::tensor_t t {{0, 1}};
+        tensor_t t {{0}};
         input.push_back(t);
     }
     
-    tiny_dnn::network<tiny_dnn::sequential> net;
-    tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
+    network<sequential> net;
+    core::backend_t backend_type = core::default_engine();
     
-    const int num_features = 2;
+    const int num_features = 1;
     const int hidden_size = 128;
     
-    net << tiny_dnn::layers::fc(1, num_features, false, backend_type);
-    net << tiny_dnn::layers::fc(num_features, hidden_size, false, backend_type);
-    net << tiny_dnn::activation::relu();
-    net << tiny_dnn::layers::fc(hidden_size, num_features, false, backend_type);
-    net << tiny_dnn::activation::rectified_linear();
+    net << layers::fc(1, num_features, false, backend_type);
+    net << layers::fc(num_features, hidden_size, false, backend_type);
+    net << activation::relu();
+    net << layers::fc(hidden_size, num_features, false, backend_type);
+    net << activation::rectified_linear();
     
     tiny_dnn::adam opt;
     size_t batch_size = 32;
@@ -165,15 +163,16 @@ void construct_cutoff_nn()
     
     DBG("start training...");
     
-    net.fit<tiny_dnn::mse>(opt, input, cutoff_values, batch_size, epochs);
+    net.fit<mse>(opt, input, cutoff_values, batch_size, epochs);
     
     DBG("training ended");
-    
-    tiny_dnn::vec_t test_input {0, 1};
-    tiny_dnn::vec_t result = net.predict(test_input);
+    /*
+    tensor_t test_input = {{0, 1}};
+    vec_t result = net.predict(test_input);
     
     for(int i = 0 ; i < result.size() ; i++)
         DBG("result = " << result[i]);
+     */
     
 }
 

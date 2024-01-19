@@ -95,7 +95,7 @@ tiny_dnn::tensor_t generate_bright_min_max()
     return cutoff;
 }
 
-tiny_dnn::float_t generate_dark()
+tiny_dnn::vec_t generate_dark()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -103,11 +103,12 @@ tiny_dnn::float_t generate_dark()
     std::uniform_int_distribution<> dark(0.1, 0.45);
     
     tiny_dnn::float_t cf = roundFloat(dark(gen));
+    tiny_dnn::vec_t cf_vec = {cf};
     
-    return cf;
+    return cf_vec;
 }
 
-tiny_dnn::float_t generate_bright()
+tiny_dnn::vec_t generate_bright()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -115,8 +116,9 @@ tiny_dnn::float_t generate_bright()
     std::uniform_int_distribution<> bright(0.5, 1.0);
     
     tiny_dnn::float_t cf = roundFloat(bright(gen));
+    tiny_dnn::vec_t cf_vec = {cf};
     
-    return cf;
+    return cf_vec;
 }
 
 void construct_cutoff_nn()
@@ -124,7 +126,7 @@ void construct_cutoff_nn()
     const int sample_size = 200;
     
     // generate training data
-    std::vector<tiny_dnn::float_t> cutoff_values;
+    std::vector<tiny_dnn::vec_t> cutoff_values;
     for(int i = 0 ; i < sample_size ; i++)
         cutoff_values.push_back(generate_dark());
     

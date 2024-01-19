@@ -61,22 +61,95 @@ tiny_dnn::tensor_t generateLead() // generates one sequence of type lead
     return lead;
 }
 
+tiny_dnn::tensor_t generate_dark_min_max()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    
+    std::uniform_real_distribution<> min(0.1, 0.2);
+    std::uniform_real_distribution<> max(0.3, 0.5);
+    
+    float mini = roundFloat(min(gen));
+    float maxi = roundFloat(max(gen));
+    
+    tiny_dnn::vec_t range {mini, maxi};
+    tiny_dnn::tensor_t cutoff {range};
+    
+    return cutoff;
+}
+
+tiny_dnn::tensor_t generate_bright_min_max()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    
+    std::uniform_real_distribution<> min(0.6, 0.7);
+    std::uniform_real_distribution<> max(0.9, 1.0);
+    
+    float mini = roundFloat(min(gen));
+    float maxi = roundFloat(max(gen));
+    
+    tiny_dnn::vec_t range {mini, maxi};
+    tiny_dnn::tensor_t cutoff {range};
+    
+    return cutoff;
+}
+
 void construct_cutoff_nn()
 {
-    const int num_features = 2;
-    const int hidden_size = 128;
+    const int sample_size = 200;
     
-    // create arbitrary data
+    // generate training data
+    std::vector<tiny_dnn::tensor_t> cutoff_values;
+    for(int i = 0 ; i < sample_size ; i++)
+        cutoff_values.push_back(generate_dark_min_max());
     
+    for(int i = 0 ; i < sample_size ; i++)
+        cutoff_values.push_back(generate_bright_min_max());
+    
+    // 0 - bright, 1 - dark
+    std::vector<tiny_dnn::tensor_t> input;
+    for(int i = 0 ; i < sample_size ; i++) // add dark
+    {
+        tiny_dnn::vec_t insts_vec {1, 0};
+        tiny_dnn::tensor_t insts_tens {insts_vec};
+        input.push_back(insts_tens);
+    }
+    
+    for(int i = 0 ; i < sample_size ; i++) // add bright
+    {
+        tiny_dnn::vec_t insts_vec {0, 1};
+        tiny_dnn::tensor_t insts_tens {insts_vec};
+        input.push_back(insts_tens);
+    }
     
     tiny_dnn::network<tiny_dnn::sequential> net;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
+    
+    const int num_features = 2;
+    const int hidden_size = 128;
     
     net << tiny_dnn::layers::fc(1, num_features, false, backend_type);
     net << tiny_dnn::layers::fc(num_features, hidden_size, false, backend_type);
     net << tiny_dnn::activation::relu();
     net << tiny_dnn::layers::fc(hidden_size, num_features, false, backend_type);
     net << tiny_dnn::activation::rectified_linear();
+    
+    tiny_dnn::adam opt;
+    size_t batch_size = 32;
+    int epochs = 10;
+    
+    DBG("start training...");
+    
+    net.fit<tiny_dnn::cross_entropy_multiclass>(opt, input, cutoff_values, batch_size, epochs);
+    
+    DBG("training ended");
+    
+    tiny_dnn::vec_t test_input {0, 1};
+    tiny_dnn::vec_t result = net.predict(test_input);
+    
+    for(int i = 0 ; i < result.size() ; i++)
+        DBG("result = " << result[i]);
     
 }
 
@@ -126,7 +199,7 @@ void construct_adsr_rnn()
     nn << tiny_dnn::activation::softmax();
     
     tiny_dnn::adam opt;
-    size_t batch_size = 64;
+    size_t batch_size = 32;
     int epochs = 25;
     
     DBG("start training...");

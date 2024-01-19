@@ -95,32 +95,54 @@ tiny_dnn::tensor_t generate_bright_min_max()
     return cutoff;
 }
 
+tiny_dnn::float_t generate_dark()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    
+    std::uniform_int_distribution<> dark(0.1, 0.45);
+    
+    tiny_dnn::float_t cf = roundFloat(dark(gen));
+    
+    return cf;
+}
+
+tiny_dnn::float_t generate_bright()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    
+    std::uniform_int_distribution<> bright(0.5, 1.0);
+    
+    tiny_dnn::float_t cf = roundFloat(bright(gen));
+    
+    return cf;
+}
+
 void construct_cutoff_nn()
 {
     const int sample_size = 200;
     
     // generate training data
-    std::vector<tiny_dnn::tensor_t> cutoff_values;
+    std::vector<tiny_dnn::float_t> cutoff_values;
     for(int i = 0 ; i < sample_size ; i++)
-        cutoff_values.push_back(generate_dark_min_max());
+        cutoff_values.push_back(generate_dark());
     
     for(int i = 0 ; i < sample_size ; i++)
-        cutoff_values.push_back(generate_bright_min_max());
+        cutoff_values.push_back(generate_bright());
     
     // 0 - bright, 1 - dark
-    std::vector<tiny_dnn::tensor_t> input;
+    std::vector<tiny_dnn::vec_t> input;
     for(int i = 0 ; i < sample_size ; i++) // add dark
     {
-        tiny_dnn::vec_t insts_vec {1, 0};
-        tiny_dnn::tensor_t insts_tens {insts_vec};
-        input.push_back(insts_tens);
+        tiny_dnn::vec_t vec {1, 0};
+        input.push_back(vec);
     }
     
     for(int i = 0 ; i < sample_size ; i++) // add bright
     {
-        tiny_dnn::vec_t insts_vec {0, 1};
-        tiny_dnn::tensor_t insts_tens {insts_vec};
-        input.push_back(insts_tens);
+        tiny_dnn::vec_t vec {0, 1};
+        input.push_back(vec);
     }
     
     tiny_dnn::network<tiny_dnn::sequential> net;
@@ -137,11 +159,11 @@ void construct_cutoff_nn()
     
     tiny_dnn::adam opt;
     size_t batch_size = 32;
-    int epochs = 10;
+    int epochs = 25;
     
     DBG("start training...");
     
-    net.fit<tiny_dnn::cross_entropy_multiclass>(opt, input, cutoff_values, batch_size, epochs);
+    net.fit<tiny_dnn::cross_entropy>(opt, input, cutoff_values, batch_size, epochs);
     
     DBG("training ended");
     

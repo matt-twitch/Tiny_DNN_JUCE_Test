@@ -129,7 +129,7 @@ void construct_cutoff_nn()
     const int num_features = 2;
     const int hidden_size = 128;
     
-    net << tiny_dnn::layers::fc(1, num_features, false, backend_type);
+    net << tiny_dnn::layers::fc(2, num_features, false, backend_type);
     net << tiny_dnn::layers::fc(num_features, hidden_size, false, backend_type);
     net << tiny_dnn::activation::relu();
     net << tiny_dnn::layers::fc(hidden_size, num_features, false, backend_type);
@@ -243,7 +243,7 @@ void construct_cnn()
 int main (int argc, char* argv[])
 {
 
-    construct_adsr_rnn();
+    construct_cutoff_nn();
 
     return 0;
 }

@@ -95,7 +95,7 @@ tiny_dnn::tensor_t generate_bright_min_max()
     return cutoff;
 }
 
-tiny_dnn::vec_t generate_dark()
+tiny_dnn::tensor_t generate_dark()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -103,12 +103,12 @@ tiny_dnn::vec_t generate_dark()
     std::uniform_int_distribution<> dark(0.1, 0.45);
     
     tiny_dnn::float_t cf = roundFloat(dark(gen));
-    tiny_dnn::vec_t cf_vec = {cf};
+    tiny_dnn::tensor_t cf_t = {{cf}};
     
-    return cf_vec;
+    return cf_t;
 }
 
-tiny_dnn::vec_t generate_bright()
+tiny_dnn::tensor_t generate_bright()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -116,9 +116,9 @@ tiny_dnn::vec_t generate_bright()
     std::uniform_int_distribution<> bright(0.5, 1.0);
     
     tiny_dnn::float_t cf = roundFloat(bright(gen));
-    tiny_dnn::vec_t cf_vec = {cf};
+    tiny_dnn::tensor_t cf_t = {{cf}};
     
-    return cf_vec;
+    return cf_t;
 }
 
 void construct_cutoff_nn()
@@ -126,7 +126,7 @@ void construct_cutoff_nn()
     const int sample_size = 200;
     
     // generate training data
-    std::vector<tiny_dnn::vec_t> cutoff_values;
+    std::vector<tiny_dnn::tensor_t> cutoff_values;
     for(int i = 0 ; i < sample_size ; i++)
         cutoff_values.push_back(generate_dark());
     
@@ -134,17 +134,17 @@ void construct_cutoff_nn()
         cutoff_values.push_back(generate_bright());
     
     // 0 - bright, 1 - dark
-    std::vector<tiny_dnn::vec_t> input;
+    std::vector<tiny_dnn::tensor_t> input;
     for(int i = 0 ; i < sample_size ; i++) // add dark
     {
-        tiny_dnn::vec_t vec {1};
-        input.push_back(vec);
+        tiny_dnn::tensor_t t {{1, 0}};
+        input.push_back(t);
     }
     
     for(int i = 0 ; i < sample_size ; i++) // add bright
     {
-        tiny_dnn::vec_t vec {0};
-        input.push_back(vec);
+        tiny_dnn::tensor_t t {{0, 1}};
+        input.push_back(t);
     }
     
     tiny_dnn::network<tiny_dnn::sequential> net;

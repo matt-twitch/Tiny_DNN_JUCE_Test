@@ -3,4 +3,160 @@
    uuid = "8D29820D-81EE-4F56-8840-0CB2DB81A095"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "415D748E-A4E9-42F2-BC99-17694951025B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/Main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "construct_cutoff_nn()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/Main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "construct_cutoff_nn()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "492">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "880">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "1756">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "2012">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "2052">
+               </Location>
+               <Location
+                  uuid = "F3700E02-CB2C-401F-AF41-D482062DCCB0 - ee8fea5d451811e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "construct_cutoff_nn()"
+                  moduleName = "Tiny_DNN_Test_2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matttwitchen/Desktop/Diss/repos/Tiny_DNN_Test_2/Source/Main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "2092">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

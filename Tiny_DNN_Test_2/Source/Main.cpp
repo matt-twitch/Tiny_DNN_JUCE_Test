@@ -155,7 +155,7 @@ void construct_cutoff_nn()
     net << layers::fc(num_features, hidden_size, false, backend_type);
     net << activation::relu();
     net << layers::fc(hidden_size, num_features, false, backend_type);
-    net << activation::rectified_linear();
+    net << activation::sigmoid();
     
     tiny_dnn::adam opt;
     size_t batch_size = 32;
@@ -166,13 +166,12 @@ void construct_cutoff_nn()
     net.fit<mse>(opt, input, cutoff_values, batch_size, epochs);
     
     DBG("training ended");
-    /*
-    tensor_t test_input = {{0, 1}};
-    vec_t result = net.predict(test_input);
     
-    for(int i = 0 ; i < result.size() ; i++)
-        DBG("result = " << result[i]);
-     */
+    vec_t test_input = {0};
+    float_t result = net.predict_max_value(test_input);
+    
+    DBG("result = " << result);
+     
     
 }
 

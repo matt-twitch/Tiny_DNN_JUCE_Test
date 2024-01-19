@@ -137,13 +137,13 @@ void construct_cutoff_nn()
     std::vector<tiny_dnn::vec_t> input;
     for(int i = 0 ; i < sample_size ; i++) // add dark
     {
-        tiny_dnn::vec_t vec {1, 0};
+        tiny_dnn::vec_t vec {1};
         input.push_back(vec);
     }
     
     for(int i = 0 ; i < sample_size ; i++) // add bright
     {
-        tiny_dnn::vec_t vec {0, 1};
+        tiny_dnn::vec_t vec {0};
         input.push_back(vec);
     }
     
@@ -153,7 +153,7 @@ void construct_cutoff_nn()
     const int num_features = 2;
     const int hidden_size = 128;
     
-    net << tiny_dnn::layers::fc(2, num_features, false, backend_type);
+    net << tiny_dnn::layers::fc(1, num_features, false, backend_type);
     net << tiny_dnn::layers::fc(num_features, hidden_size, false, backend_type);
     net << tiny_dnn::activation::relu();
     net << tiny_dnn::layers::fc(hidden_size, num_features, false, backend_type);
@@ -165,7 +165,7 @@ void construct_cutoff_nn()
     
     DBG("start training...");
     
-    net.fit<tiny_dnn::cross_entropy>(opt, input, cutoff_values, batch_size, epochs);
+    net.fit<tiny_dnn::mse>(opt, input, cutoff_values, batch_size, epochs);
     
     DBG("training ended");
     

@@ -61,11 +61,28 @@ tiny_dnn::tensor_t generateLead() // generates one sequence of type lead
     return lead;
 }
 
+void construct_cutoff_nn()
+{
+    const int num_features = 2;
+    const int hidden_size = 128;
+    
+    // create arbitrary data
+    
+    
+    tiny_dnn::network<tiny_dnn::sequential> net;
+    tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
+    
+    net << tiny_dnn::layers::fc(1, num_features, false, backend_type);
+    net << tiny_dnn::layers::fc(num_features, hidden_size, false, backend_type);
+    net << tiny_dnn::activation::relu();
+    net << tiny_dnn::layers::fc(hidden_size, num_features, false, backend_type);
+    net << tiny_dnn::activation::rectified_linear();
+    
+}
+
 void construct_adsr_rnn()
 {
-    const int num_features = 4; // Number of input features, only predicting one feature, the envelope value
-    const int num_vals = 400; // Number of input values, equivalent to vocab size
-    const int seq_length = 4;
+    const int num_features = 4; // Number of input features
     const int hidden_size = 128; // size of hidden layers
     const int sample_size = 200; // * 2 = number of time steps
     const int test_size = 100;
@@ -94,30 +111,6 @@ void construct_adsr_rnn()
         insts.push_back(insts_tens);
     }
     
-    // test data
-    std::vector<tiny_dnn::tensor_t> test_params;
-    for(int i = 0 ; i < test_size ; i++)
-        test_params.push_back(generatePad());
-    
-    for(int i = 0 ; i < test_size ; i++)
-        test_params.push_back(generateLead());
-    
-    // 0 = pad, 1 = lead
-    std::vector<tiny_dnn::tensor_t> test_insts;
-    for(int i = 0 ; i < test_size ; i++)
-    {
-        tiny_dnn::vec_t insts_vec {0, 1, 0, 0};
-        tiny_dnn::tensor_t insts_tens {insts_vec};
-        test_insts.push_back(insts_tens);
-    }
-    
-    for(int i = 0 ; i < test_size ; i++)
-    {
-        tiny_dnn::vec_t insts_vec {1, 0, 0, 0};
-        tiny_dnn::tensor_t insts_tens {insts_vec};
-        test_insts.push_back(insts_tens);
-    }
-    
     tiny_dnn::network<tiny_dnn::sequential> nn;
     tiny_dnn::core::backend_t backend_type = tiny_dnn::core::default_engine();
     
@@ -133,8 +126,8 @@ void construct_adsr_rnn()
     nn << tiny_dnn::activation::softmax();
     
     tiny_dnn::adam opt;
-    size_t batch_size = 400;
-    int epochs = 50;
+    size_t batch_size = 64;
+    int epochs = 25;
     
     DBG("start training...");
     
@@ -142,22 +135,15 @@ void construct_adsr_rnn()
     
     DBG("training ended");
     
-    tiny_dnn::vec_t input {1, 0, 0, 0};
+    tiny_dnn::vec_t input {0, 1, 0, 0};
     tiny_dnn::vec_t result = nn.predict(input);
     
     for(int i = 0 ; i < result.size() ; i++)
         DBG("result = " << result[i]);
-    
-}
-
-void construct_filter_nn()
-{
-    
 }
 
 void construct_cnn()
 {
-    
     tiny_dnn::network<tiny_dnn::sequential> net;
     
     // training data (84 x 4)
